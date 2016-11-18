@@ -1,0 +1,9 @@
+AddDefaultCharset utf-8
+Options +SymLinksIfOwnerMatch
+RewriteEngine On
+RewriteRule ^sitemap.xml$ /sitemap.php?type=xml [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php [L]

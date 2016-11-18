@@ -5,7 +5,7 @@
 						};
 						var requery=JSON.stringify(data);
 	$.ajax({
-					url: "api/objecttype",
+					url: "/api/objecttype",
 					type: "post",
 					data:'data='+ requery	,
 					success: function(res){
@@ -47,7 +47,7 @@ function list_object (obj)
 					arr.data=if_this;
 					var request=JSON.stringify(arr);
 	                $.ajax({
-                    url:"api/object"
+                    url:"/api/object"
 					, type:'POST'
                     , data:'data=' + request
                     , success: function(res) {
@@ -77,7 +77,7 @@ function list_object (obj)
 			 
 	
    		 var login = $.ajax({		
-          url:'api/user',
+          url:'/api/user',
           type:'post',
 		  data: 'data='+ requery,	
 		success: function(res) {
@@ -103,7 +103,7 @@ function logout_1(){
 	$("#hello").html('<h5 class=pull-right id=hello>Вітаємо, <a href=# data-toggle=modal data-target=#myModal>увійти в особистий кабінет </a>')
 	var requery=JSON.stringify(logout);
 	var logout_ = $.ajax({	
-	url:'api/user',
+	url:'/api/user',
    type:'post',
    data: 'data='+ requery
 	})	
@@ -180,7 +180,7 @@ function send_req_more(){
 		req_more.data=data;
 		var requery=JSON.stringify(req_more);
 		var send_req_more_ = $.ajax({
-		url: "api/more",
+		url: "/api/more",
 		type: "post",
 		success: function(html){  
                         $("#content").html(html);  
@@ -203,7 +203,7 @@ function kilk_spozh_(){
 	kilk_spozh.data=data;
 	var requery=JSON.stringify(kilk_spozh);
 	var kilk_vidviduv = $.ajax({
-			url: "api/more",
+			url: "/api/more",
 			type:'post',
 			success: function(html){  
                         $("#content").html(html);  
@@ -226,7 +226,7 @@ function area_windws_(){
 	area_windws_.data=data;
 	var requery=JSON.stringify(area_windws_);
 	var area_windws_ = $.ajax({
-	url:"api/more",
+	url:"/api/more",
 	type:'post',
 	data: 'data='+ requery
 	})
@@ -245,7 +245,7 @@ function send_req_electro(){
 	kolkW_.data=data;
 	var requery=JSON.stringify(kolkW_);
 	var send_req_gas_ = $.ajax({
-		url:'api/data',
+		url:'/api/data',
 		type:'post',
 		success: function(html){  
                         $("#content").html(html);  
@@ -267,7 +267,7 @@ function send_req_gas(){
 	gas_.data=data;
 	var requery=JSON.stringify(gas_);
 	var send_req_gas_ = $.ajax({
-		url:'api/data',
+		url:'/api/data',
 		type:'post',
 		success: function(html){  
                         $("#content").html(html);  
@@ -289,7 +289,7 @@ function send_req_teplo(){
 	teplo_.data=data;
 	var requery=JSON.stringify(teplo_);
 	var send_req_teplo_ = $.ajax({
-		url: 'api/data',
+		url: '/api/data',
 		type:'post',
 		success: function(html){  
                         $("#content").html(html);  
@@ -311,7 +311,7 @@ function send_req_water(){
 	water_.data=data;
 	var requery=JSON.stringify(water_);
 	var send_req_water_ = $.ajax({
-		url: 'api/data',
+		url: '/api/data',
 		type:'post',
 		success: function(html){  
                         $("#content").html(html);  
@@ -336,7 +336,7 @@ function send_req_taryf_electro(){
 	e_taryf.data=data;
 	var requery=JSON.stringify(e_taryf);
 	var send_req_taryf_electro_ = $.ajax({
-		url: 'api/tarif',
+		url: '/api/tarif',
 		type: 'post',
 		data:'data='+ requery
 	})	
@@ -381,7 +381,7 @@ function send_req_taryf_heat(){
 	h_taryf.data=data;
 	var requery=JSON.stringify(h_taryf);
 	var send_req_taryf_heat_ = $.ajax({
-		url: 'api/data',
+		url: '/api/data',
 		type: 'post',
 		data: 'data='+ requery,
 	success: function(data) {
@@ -450,7 +450,7 @@ var re=JSON.stringify(params);
 	
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'api/data',
+		url: '/api/data',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {
@@ -556,7 +556,7 @@ console.log (data);
 					  ]	}
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'api/data',
+		url: '/api/data',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {
@@ -610,7 +610,7 @@ console.log (data);
 	
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'api/data',
+		url: '/api/data',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {
@@ -718,7 +718,7 @@ console.log (data);
 					  ]	}	
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'api/sobes',
+		url: '/api/sobes',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {
@@ -774,7 +774,7 @@ console.log (data);
 					  ]	}
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'api/sobes',
+		url: '/api/sobes',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {

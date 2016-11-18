@@ -18,7 +18,8 @@
 "12":{"arg_str":"controllers/object.php", "route_url":"object/:num", "route_type":"template_page"},
 "13":{"arg_str":"controllers/root/table.php", "route_url":"tablemark/:str", "route_type":"template_page"},
 "14":{"arg_str":"controllers/objecttype.php", "route_url":"objecttype/:num", "route_type":"template_page"},
-"15":{"arg_str":"controllers/admin/check_obj.php", "route_url":"object/edit/:num", "route_type":"template_page"}
+"15":{"arg_str":"controllers/typeanaliz.php", "route_url":"typeanaliz/:num", "route_type":"template_page"},
+"16":{"arg_str":"controllers/admin/check_obj.php", "route_url":"object/edit/:num", "route_type":"template_page"}
 
 
 }

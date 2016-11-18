@@ -8,57 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name=author content="Сажнєв Михайло / 100000718680383, Вячеслав Рєдькін / 100012765812627, Станіслав Деріпаско / 100012813070004">
 <title>SmartCity. Енергетика та енергоефективність</title>
+<link href=/css/fractal.css rel=stylesheet>
 <link href=/css/bootstrap.min.css rel=stylesheet>
-
-<style type="text/css">
-  .navbar-default {
-  background-color: #ffca00;
-  border-bottom: 0 0 5px 0 black;  
-}
-.navbar-default .navbar-text {
-  color: grey;
-}
-.navbar-default .navbar-nav > li > a {
-  color: grey;
-}
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
-}
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  color: #000000;
-  background-color: #ffaa00;
-}
-.navbar-default .navbar-nav > .open > a,
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a:focus {
-  color: #000000;
-  background-color: #ffaa00;
-}
-.navbar-default .navbar-toggle {
-  border-color: #ffaa00;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: #ffaa00;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ffffff;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #ffffff;
-}
-.navbar-default .navbar-link {
-  color: #ff0000;
-}
-.navbar-default .navbar-link:hover {
-  color: #000000;
-}
-</style>
-
 <script src=/js/jquery.min.js></script>
 <script src=/js/bootstrap.min.js></script>
 <script src=/js/log_user.js></script>
@@ -97,8 +48,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
     </button>
-	<a href=/><img src=/img/logo.png alt="Управління енергетики та енергоефективності міста Мелітополя." height=50px/></a>
-	</div>
+  <a href=/><img src=/img/logo.png alt="Управління енергетики та енергоефективності міста Мелітополя." height=50px/></a>
+  </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Початкова</a></li>
@@ -110,7 +61,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
     </div>
 </nav>
-<!--Форма входу початок-->
+
+<div class=container>
+<div class=row>
+<div class=col-lg-12>
 <div class="modal fade" id=myModal role=dialog>
 <div class="modal-dialog modal-sm">
 <div class=modal-content>
@@ -129,7 +83,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <label for=psw><span class="glyphicon glyphicon-eye-open"></span> Введіть пароль</label>
 <input type=password class=form-control id=pwd placeholder=Пароль>
 </div><br>
-<a href=404.html>Нагадати пароль</a><br>
+<a href=/404>Нагадати пароль</a><br>
 <div class="checkbox pull-right">
 <label><input type=checkbox> Запам'ятати мене</label>
 </div><br>
@@ -141,43 +95,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 </div>
-<!--Форма входу кінець-->
-<!--Добавление типа объекта начало-->
-<div class="modal fade" id=myModal2 role=dialog>
-<div class="modal-dialog modal-lg">
-<div class=modal-content>
-<div class=modal-body>
-<form class=form-inline role=form>
-<div class=form-group>
-<label for=usrname><span class="glyphicon glyphicon-home"></span> Створити новий тип закладу</label>
-<input type=email class=form-control id=name_type placeholder="назва типу" style=width:480px>
-<button type=submit class="btn btn-primary" data-dismiss=modal onclick="add_type();">Створити</button>
-</div><br>
-</form>
 </div>
 </div>
 </div>
-</div>
-<!--Добавление типа объекта конец-->
-<!--Добавление объекта начало-->
-<div class="modal fade" id=Modal_add_obj role=dialog>
-<div class="modal-dialog modal-lg">
-<div class=modal-content>
-<div class=modal-body>
-<form class=form-inline role=form>
-<div class=form-group>
-<label><span class="glyphicon glyphicon-home"></span> Додати об’єкт</label>
-<input class=form-control id_type="" id=add_name_inst placeholder="назва об’єкту" style=width:610px>
-<button type=submit class="btn btn-primary" data-dismiss=modal onclick="add_name();">Створити</button>
-</div><br>
-</form>
-</div>
-</div>
-</div>
-</div>
-<!--Добавление объекта конец-->
 
-<div class="container" style="min-height: calc(100vh - 250px);">
+<div class="container-fluid">
+  <div class=row>
+    <div class=col-sm-6 style="padding: 0; margin: 0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d61745.912447134666!2d35.3697762660006!3d46.84743819317629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1469354345196" width=100% height=500 frameborder=0 style=border:0 allowfullscreen></iframe>
+    </div>
+    <div class=col-sm-3 style="padding: 0; margin: 0;">
+    <img src="/images/smart-home-online-energy-efficiency-chart-rating-displayed-screen-tablet-held-hands-businessman-sitting-51782994.jpg" height=500 width=100%>
+    </div>
+    <div class=col-sm-3 style="padding: 0; margin: 0;">
+    <img src="/images/energy-class-scale-savings-efficiency-piggy-bank-home-white-background-47671704.jpg" height=500 width=100%>    
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class=row>
+    <div class=col-sm-3 style="padding: 0; margin: 0;">
+    <img src="/images/green-energy-earth-globe-illustration-41894111.jpg" height=250 width=100%>
+    </div>
+    <div class=col-sm-3 style="padding: 0; margin: 0;">
+    <img src="/images/house-energy-efficiency-concept-thermal-insulation-isolated-white-35403212.jpg" height=250 width=100%>
+    </div>
+    <div class=col-sm-3 style="padding: 0; margin: 0;">
+    <img src="/images/house-energy-efficiency-rating-green-home-save-heat-ecology-toy-blocks-isolated-white-background-42512195.jpg" height=250 width=100%>
+    </div>
+    <div class=col-sm-3 style="padding: 0; margin: 0;">   
+    <img src="/images/thermal-image-house-25933917.jpg" height=250 width=100%>
+    </div>
+  </div>
+</div>
+
+<div class="container">
 
 {!content!}
 

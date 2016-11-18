@@ -46,7 +46,7 @@
 <div class=input-group><span class=input-group-addon>Сайт закладу</span><input type=text id=site_url value="{!site_url!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
 <div class=input-group><span class=input-group-addon>Електронна пошта</span><input type=text id=e_mail value="{!e_mail!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
 <div class=input-group><span class=input-group-addon>ПІБ керівника закладу</span><input type=text id=director value="{!director!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
-<div class=input-group><span class=input-group-addon>ПІБ відповідального за внесення даних</span><input type=text id=pib_vidpov value="{!pib_vidpov!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>ПІБ відповідального за внесення данних</span><input type=text id=pib_vidpov value="{!pib_vidpov!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
 </div>
 </div>
 </form>
@@ -59,73 +59,7 @@
 <!--main_end-->
 <!--main_start-->
 <div id="addon" class="tab-pane fade">
-<div class="panel panel-info">
-<div class=panel-heading>
-<h4 class=panel-title>
-			<h1>Додаткові дані про заклад</h1>
-</h4>
-</div>
-
-<div class=panel-body>
-<div class=row>
-<div class=col-sm-6>
-<div class=input-group><span class=input-group-addon>Опалювальна площа </span><input type=text id=opal_area value class=form-control placeholder="Наведено приклад"></div><br>
-<div class=input-group><span class=input-group-addon>Загальний об’єм закладу </span><input type=text id=area_zdan value class=form-control placeholder="Наведено приклад того"></div><br>
-<div class=input-group><span class=input-group-addon>Опалювальний об’єм </span><input type=text id=opal_volume value class=form-control placeholder="Наведено приклад того"></div><br>
-<div class=input-group><span class=input-group-addon>Загальна площа вікон </span><input type=text id=area_windw value class=form-control placeholder="Наведено приклад"></div><br>
-</div>
-<div class=col-sm-2>
-<div class=well>
-Тип опалення
-<select>
-<option value=центральне>центральне</option>
-<option value=індивідуальне>індивідуальне</option>
-</select><br>
-Тип палива
-<select>
-<option value=газ>газ</option>
-<option value=вугілля>вугілля</option>
-<option value=альтернативне>альтернативне</option>
-</select><br>
-Матеріал стін
-<select>
-<option value=цегла>цегла</option>
-<option value=блоки>блоки</option>
-<option value=змішаний>змішаний</option>
-</select><br>
-Тип покрівлі
-<select>
-<option value=м'яка>м'яка</option>
-<option value=шифер>шифер</option>
-<option value=профнастіл>профнастіл</option>
-<option value=змішана>змішана</option>
-</select><br>
-</div>
-</div>
-<div class=col-sm-4>
-<div class=well>
-Лічильник тепла
-<select>
-<option value=так>так</option>
-<option value=ні>ні</option>
-</select><br><br>
-Електролічильник
-<select>
-<option value=так>так</option>
-<option value=ні>ні</option>
-</select><br><br>
-Лічильник води
-<select>
-<option value=так>так</option>
-<option value=ні>ні</option>
-</select>
-</div>
-</div>
-</div>
-<button type=button class="btn btn-primary btn-md pull-right" onclick=send_req_more();>Внести записи</button>
-</div>
-
-</div>
+{!energomore!}
 </div>
 <!--addon_end-->
 <!--tariff_start-->

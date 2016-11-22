@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Сайт електроних сервісів міста Мелітополь. Кабінет самообслуговування, контаку з адміністрацією та мерією міста">
+<meta name=keywords content="SmartCity.Melitopol, SM, SmartCity, Melitopol">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name=author content="Сажнєв Михайло / 100000718680383, Вячеслав Рєдькін / 100012765812627, Станіслав Деріпаско / 100012813070004">
+<title>Управління соціально-економічного розвитку Мелітополя</title>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/fractal.css">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+<script src=/js/jquery.min.js></script>
+<script src=/js/bootstrap.min.js></script>
+<script src=/js/log_user.js></script>
+<script type="text/javascript"  src= "/js/JS_req.js"></script>
+<!--colors: 
+ body {
+ style="background-image: url("/images/back2.jpg"); position: fixed; opacity: 90%;"
+ }
+-->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TB2T2L');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body onLoad="login_if();">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLZLPB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div style="background-image: url(/images/silouettet.png); background-color: #d7e2fe; font-family: 'Lora', serif;">
+<div class=container >
+<div class=row>
+<div class=col-lg-1>
+<img src="/images/melitopol_2003.gif" height=100px style="padding: 10px;">
+</div>
+<div class=col-lg-11>
+<p class=text-primary style="padding-top: 10px;"><b>Енергетика та енергоефективність</p><h2 style="text-shadow: 2px 2px white;">Мелітополь</h2></b>
+</div>
+</div>
+</div>
+</div>
+
+<nav class="navbar navbar-default" data-spy="affix" style="top: 0; width: 100%; z-index: 1; border-color: black; border-width: 0 0 5px 0; border-style: solid; font-family: 'Lora', serif;" data-offset-top="70">  
+    <div class="navbar-header" style="padding: 0px 20px 0px 20px; ">    
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+    </button>
+	</div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Початкова</a></li>
+        <li><a href="/ugoda_meriv_shid">"Угода Мерів-Схід"</a></li>
+        <li class="active"><a href="/energoanaliz">Енергоаналіз</a></li> 
+        <li><a href="/faq">Питання та відповіді</a></li>         
+      </ul>
+      <ul class="nav navbar-nav navbar-right">        
+        <li><a href="registration.html"><span class="glyphicon glyphicon-user"></span> Реєстрація</a></li>
+        <li><a id=hello href=# data-toggle=modal data-target=#myModal><span class="glyphicon glyphicon-log-in"></span> Увійти</a></li>
+      </ul>
+    </div>
+</nav>
+
+<!--Форма входу початок-->
+<div class="modal fade" id=myModal role=dialog>
+  <div class="modal-dialog modal-sm">
+  <div class=modal-content>
+    <div class=modal-header>
+     <button type=button class=close data-dismiss=modal>&times;</button>
+      <h3>Увійти в систему</h3><br>
+      <text style=color:red; id="err"></text>
+    </div>
+    <div class=modal-body>
+      <form class=form-inline role=form>
+        <div class=form-group>
+          <label for=usrname><span class="glyphicon glyphicon-user"></span> Введіть логін</label>
+          <input type=email class=form-control id=email placeholder=Логін>
+        </div><br>
+        <div class=form-group>
+          <label for=psw><span class="glyphicon glyphicon-eye-open"></span> Введіть пароль</label>
+          <input type=password class=form-control id=pwd placeholder=Пароль>        
+        </div><br>
+          <a href=404.html>Нагадати пароль</a><br>
+        <div class="checkbox pull-right">
+          <label><input type=checkbox> Запам'ятати мене</label>
+        </div><br>
+      </form>
+    </div>
+    <div class=modal-footer>
+      <button type=submit class="btn btn-primary" onclick = "login_1();" id = "login_0">Увійти</button>
+    </div>
+  </div>
+  </div>
+</div>
+<!--Форма входу кінець-->
+<!--Добавление типа объекта начало-->
+<div class="modal fade" id=myModal2 role=dialog>
+<div class="modal-dialog modal-lg">
+<div class=modal-content>
+<div class=modal-body>
+<form class=form-inline role=form>
+<div class=form-group>
+<label for=usrname><span class="glyphicon glyphicon-home"></span> Створити новий тип закладу</label>
+<input type=email class=form-control id=name_type placeholder="назва типу" style=width:480px>
+<button type=submit class="btn btn-primary" data-dismiss=modal onclick="add_type();">Створити</button>
+</div><br>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!--Добавление типа объекта конец-->
+<!--Добавление объекта начало-->
+<div class="modal fade" id=Modal_add_obj role=dialog>
+<div class="modal-dialog modal-lg">
+<div class=modal-content>
+<div class=modal-body>
+<form class=form-inline role=form>
+<div class=form-group>
+<label><span class="glyphicon glyphicon-home"></span> Додати об’єкт</label>
+<input class=form-control id_type="" id=add_name_inst placeholder="назва об’єкту" style=width:610px>
+<button type=submit class="btn btn-primary" data-dismiss=modal onclick="add_name();">Створити</button>
+</div><br>
+</form>
+</div>
+</div>
+</div>
+</div>
+<!--Добавление объекта конец-->
+
+
+<div class="container" style="min-height: calc(100vh - 250px);">
+	Маршрутизація сервісу оборобки відключена, до вирішення питання щодо структури та вигляду сайту. До повної готовності усіх елементів.
+</div>
+
+
+
+<footer class=container-flid style="background-color: black; background-image: url(/images/black-polygon-background_1055-705.jpg); height: 150px; font-family: 'Lora', serif; ">
+<div class="container">
+<div class=row>
+<div class="col-lg-3">
+<text style="display: table-cell; height: 150px; color: white; vertical-align: bottom; padding-bottom: 20px;">
+<h5>Управіння соціально-економічного розвитку Мелітополя.</h5><br>
+тел.: 0619 42 69 01<br>
+факс: 0619 26 33 85<br>
+пошта: zaharchuk@mlt.gov.ua<br>
+</text>
+</div>
+<div class=col-lg-7>
+<a href=index.html class="pull-right"><img src=img/logo.png alt="Управління енергетики та енергоефективності міста Мелітополя." style="padding-top: 50px;"/></a>
+</div>
+<div class=col-lg-2>
+<text style="display: table-cell; height: 150px; color: white; vertical-align: bottom; padding-bottom: 20px;">Мелітополь, 2017</text>
+</div>
+</div>
+</div>
+</footer>
+</body>
+</html>

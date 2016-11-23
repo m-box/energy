@@ -9,14 +9,14 @@
   border-bottom: 0 0 5px 0 black;  
 }
 .navbar-default .navbar-text {
-  color: grey;
+  color: white;
 }
 .navbar-default .navbar-nav > li > a {
-  color: grey;
+  color: black;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #000000;
+  color: #ffffff;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,

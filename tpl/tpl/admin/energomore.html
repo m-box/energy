@@ -1,0 +1,57 @@
+<div class="panel panel-info">
+<div class=panel-heading>
+<h4 class=panel-title>
+			<h1>Додаткові дані про заклад</h1>
+</h4>
+</div>
+<form id="obj_more">
+<div class=panel-body>
+<div class=row>
+<div class=col-sm-6>
+<div class=input-group><span class=input-group-addon>Опалювальна площа </span><input type=text id="opaluvalna_plosha" value="{!opaluvalna_plosha!}" class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>Загальний об’єм закладу </span><input type=text id="zagalni_obyem" value="{!zagalni_obyem!}" class=form-control placeholder="Наведено приклад того"></div><br>
+<div class=input-group><span class=input-group-addon>Опалювальний об’єм </span><input type=text id="opaluvalniy_obyem" value="{!opaluvalniy_obyem!}" class=form-control placeholder="Наведено приклад того"></div><br>
+<div class=input-group><span class=input-group-addon>Загальна площа вікон </span><input type=text id="plosha_vikon" value="{!plosha_vikon!}" class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>Площа металопластикових вікон </span><input type=text id="plosha_metal_vikon" value="{!plosha_metal_vikon!}" class=form-control placeholder="Наведено приклад"></div><br>
+</div>
+<div class=col-sm-2>
+<div class=well>
+Тип опалення
+<select id="type_opalen">
+{s!type_opalen!s}
+</select><br>
+Тип палива
+<select id="type_fuel">
+{s!type_fuel!s}
+</select><br>
+Матеріал стін
+<select id="type_walls">
+{s!type_walls!s}
+</select><br>
+Тип покрівлі
+<select id="type_roof">
+{s!type_roof!s}
+</select><br>
+</div>
+</div>
+<div class=col-sm-4>
+<div class=well>
+Лічильник тепла
+<select id="lich_tepla">
+{s!lich_tepla!s}
+</select><br><br>
+Електролічильник
+<select  id="lich_electro">
+{s!lich_electro!s}
+</select><br><br>
+Лічильник води
+<select id="lich_water">
+{s!lich_water!s}
+</select>
+</div>
+</div>
+</div>
+<button type=button class="btn btn-primary btn-md pull-right" onclick="Test_put_more();">Внести записи</button>
+</div>
+</form>
+</div>

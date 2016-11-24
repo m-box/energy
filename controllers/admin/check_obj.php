@@ -15,7 +15,6 @@ if ($user_type=="1")
 		$jtpl=json_decode(file_get_contents('tpl/admin/moresel.json'), true);
 
 		$moredata = $db -> getRow('SELECT * FROM  `more` WHERE id=?i', $obj_id);
-		print_r($moredata);
 		$moretpl=select_option ($jtpl , $moredata , $moretpl);
 		$moretpl=template_str_data($moretpl , "more" , $moredata);
 		$run=str_replace("{!energomore!}",$moretpl,$run);

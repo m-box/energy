@@ -1,0 +1,162 @@
+<div class=jumbotron>
+<h2><span class="label label-info">Реєстрація</span></h2><br>
+<table>
+<tr>
+<td width=20%></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="text pull-right">Всі поля обов'язкові для заповнення*</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<label class=checkbox-inline><input type=checkbox id = "accept_0" >Заповнюючи цю анкету я даю згоду на те, що внесена мною інформація буде зберігатися та оброблятися в інформаційних системах Мелітопольської міської ради відповідно до призначення.</label>
+</td>
+<td><div class="valids" id="validCheck"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">E-mail:</span></td>
+<td>
+<input type=text class=form-control value = "" id = "e_mail_reg" placeholder="Введіть Вашу електронну пошту"><br>
+</td>
+<td><div class="valids" id="validEmail"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">Прізвище:</span></td>
+<td>
+<input type=text class=form-control placeholder="Ваше прізвище" value = "" id = "lastname_reg"><br>
+</td>
+<td><div class="valids" id="validLastname"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">Iм'я:</span></td>
+<td>
+<input type=text class=form-control value = "" id = "Name_reg" placeholder="Ваше ім’я"><br>
+</td>
+<td><div class="valids" id="validname"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">По батькові:</span></td>
+<td>
+<input type=text class=form-control value = "" id = "second_name"placeholder="По батькові"><br>
+</td>
+<td><div class="valids" id="validSecondname"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">Рік народження:</span></td>
+<td>
+<input type=text class=form-control value = "" id = "birthday" placeholder="11-12-1999"><br>
+</td>
+<td><div class="valids" id="validDate"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span id = "gender" class="label label-default">Стать:</span></td>
+<td>
+<select id = "gender">
+<option selected>Чоловіча</option>
+<option>Жіноча</option>
+</select><br>&nbsp
+</td>
+<tr>
+<td class=pull-right><span class="label label-default">Соціальний стан:</span></td>
+<td>
+<select id = "soc_stan">
+<option>Пенсіонер</option>
+<option selected>Робітник</option>
+<option>Фермер</option>
+<option>Працівник бюджетної сфери</option>
+<option>Державний службовець</option>
+<option>Військовослужбовець</option>
+<option>Підприємець</option>
+<option>Безробітний</option>
+<option>Учень, студент</option>
+<option>Служитель релігійної організації</option>
+<option>Особа, що позбавлена волі; воля обмежена</option>
+<option>Інше</option>
+</select><br>&nbsp
+</td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">Пільгова категорія:</span></td>
+<td>
+<select id = "pilg_cat">
+<option>Учасник війни</option>
+<option>Дитина війни</option>
+<option>Інвалід Великої Вітчизняної війни</option>
+<option>Інвалід війни</option>
+<option>Учасник бойових дій</option>
+<option>Ветеран праці</option>
+<option>Інвалід I групи</option>
+<option>Інвалід II групи</option>
+<option>Інвалід III групи</option>
+<option>Дитина-інвалід</option>
+<option>Одинока мати</option>
+<option>Мати-героїня</option>
+<option>Багатодітна сім'я</option>
+<option>Особа, що потерпіла від Чорнобильської катастрофи</option>
+<option>Учасник ліквідації наслідків аварії на Чорнобильській АЕС</option>
+<option>Герой України</option>
+<option>Герой Радянського Союзу</option>
+<option>Герой Соціалістичної Праці</option>
+<option>Дитина</option>
+<option selected>Інші категорії</option>
+<option>Депутат</option>
+<option>Народний депутат України</option>
+</select><br>&nbsp
+</td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">Місто / Район:</span></td>
+<td>
+<input type=text value = "" id = "city" class=form-control placeholder="Назва населеного пункту проживання"><br>
+</td>
+<td><div class="valids" id="validCity"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">Контактний телефон:</span></td>
+<td>
+<input type=text value = "" id = "number" class=form-control placeholder="096 ххх хх хх">
+</td>
+<td><div class="valids" id="validTelephone"></div></td>
+</tr>
+<tr>
+<td></td>
+<td>
+<label class=checkbox-inline><input id = "accept" type=checkbox value>Я згоден(а) отримувати інформаційні повідомлення електронною поштою від Мелітопольської міської ради</label><br>&nbsp
+</td>
+</tr>
+<tr>
+<td class=pull-right><span  class="label label-default">Пароль:</span></td>
+<td>
+<input type=password value = "" id = "passs" class=form-control placeholder="наберіть пароль">
+</td>
+<td><div class="valids" id="validPass"></div></td>
+</tr>
+<tr>
+<td></td>
+<td>
+*Довжина паролю повинна бути більш ніж 6 символів<br>&nbsp
+</td>
+</tr>
+<tr>
+<td class=pull-right><td class=pull-right><span  class="label label-default">Повторіть пароль:</span></td></td>
+<td>
+<input type=password value = "" id = "pwd2" class=form-control placeholder="наберіть пароль ще раз"><br>
+</td>
+<td><div class="valids" id="validrePass"></div></td>
+</tr>
+<tr>
+<td class=pull-right><span class="label label-default">Захисний код:</span></td>
+<td>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<button type=button id="submit_f" class="btn btn-success pull-right" onclick = "registration();">Зареєструватись</button>
+</td>
+</tr>
+</table>
+</div>

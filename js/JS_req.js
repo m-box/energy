@@ -77,7 +77,7 @@ function list_object (obj)
 			 
 	
    		 var login = $.ajax({		
-          url:'api/user',
+          url:'/api/user',
           type:'post',
 		  data: 'data='+ requery,	
 		success: function(res) {
@@ -87,6 +87,7 @@ function list_object (obj)
 							{
 							login_if();
 							$('#myModal').modal('hide');
+							   location.reload(true);
 							}
 							else
 							{
@@ -100,12 +101,15 @@ function logout_1(){
 	method = "exit";
 	var logout = {};
 	logout.method="exit"
-	$("#hello").html('<a id=hello href=# data-toggle=modal data-target=#myModal><span class="glyphicon glyphicon-log-in"></span> Увійти</a>')
+	
 	var requery=JSON.stringify(logout);
 	var logout_ = $.ajax({	
-	url:'api/user',
+	url:'/api/user',
    type:'post',
-   data: 'data='+ requery
+   data: 'data='+ requery,
+   success: function(){
+	   $("#hello").html('<a id=hello href=# data-toggle=modal data-target=#myModal><span class="glyphicon glyphicon-log-in"></span> Увійти</a>');
+   location.reload(true);}
 	})	
 };
 //отправка запроса на зпись данных в таблицу из energosad в таблицу energy_object     

@@ -79,7 +79,7 @@
 						var result=JSON.parse(res);
 						if (result.data=="ok")
 						{
-							location.reload();
+							location.reload(true);
 						}
 
 
@@ -107,7 +107,7 @@
 						var result=JSON.parse(res);
 						if (result.data=="ok")
 						{
-							location.reload();
+							location.reload(true);
 						}
 
 

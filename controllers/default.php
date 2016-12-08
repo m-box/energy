@@ -2,6 +2,8 @@
 $adm='';
 if ($user_type=="1")
 {$adm='<button class="btn btn-primary pull-right" data-toggle=modal data-target=#myModal2>Додати новий тип</button>';}
+elseif ($user_type=="3")
+{$adm='<a class="btn btn-primary pull-right" href="/check_adm">Адміністрування закладу</a>';}
 	
 $content='<script type="text/javascript"  src= "/js/energoch.js"></script>
 <h1>Оберіть тип об\'єкту</h1>'.$adm.'<br>

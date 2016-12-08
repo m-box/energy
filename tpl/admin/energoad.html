@@ -1,147 +1,6 @@
-<!DOCTYPE html>
-<html lang=en>
-<head>
-<meta charset="UTF-8">
-<meta name="description" content="Сайт електроних сервісів міста Мелітополь. Кабінет самообслуговування, контаку з адміністрацією та мерією міста">
-<meta name=keywords content="SmartCity.Melitopol, SM, SmartCity, Melitopol">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-<meta name=author content="Сажнєв Михайло / 100000718680383, Вячеслав Рєдькін / 100012765812627, Станіслав Деріпаско / 100012813070004">
-<title>Управління соціально-економічного розвитку Мелітополя</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/fractal.css">
-<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-<script src=/js/jquery.min.js></script>
-<script src=/js/bootstrap.min.js></script>
-<script src=/js/log_user.js></script>
-<script type="text/javascript"  src= "/js/JS_req.js"></script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MLZLPB');</script>
-<!-- End Google Tag Manager -->
-</head>
-<body onLoad="login_if();" style="background-image: url(/images/47081817-white-background-images.jpg); background-size: 100%; object-fit: cover; background-attachment: fixed;">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLZLPB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<div style="background-image: url(/images/silouettet.png); background-color: #d7e2fe; font-family: 'Lora', serif;">
-<div class=container >
-<div class=row>
-
-<table media=(max-width:800px)>
-<tr>
-<td><img src="/images/melitopol_2003.gif" height=100px style="padding: 10px;"></td>
-<td><p class=text-primary style="padding-top: 10px;"><b>Енергетика та енергоефективність</p><h2 style="text-shadow: 2px 2px white;">Мелітополь</h2></b></td>
-</table>
-</tr>
-
-</div>
-</div>
-</div>
-
-<nav class="navbar navbar-default" data-spy="affix" style="top: 0; width: 100%; z-index: 10; border-color: black; border-width: 0 0 5px 0; border-style: solid; font-family: 'Lora', serif;" data-offset-top="70">  
-    <div class="navbar-header" style="padding: 0px 20px 0px 20px; ">    
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
-    </button>
-	</div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Початкова</a></li>
-        <li><a href="/ugoda_meriv_shid">"Угода Мерів-Схід"</a></li>
-        <li><a href="/energoanaliz">Енергоаналіз</a></li> 
-        <li><a href="/faq">Питання та відповіді</a></li>         
-      </ul>
-      <ul class="nav navbar-nav navbar-right">        
-        <!--<li><a href="registration.html"><span class="glyphicon glyphicon-user"></span> Реєстрація</a></li>-->
-        <li><a id=hello href=# data-toggle=modal data-target=#myModal><span class="glyphicon glyphicon-log-in"></span> Увійти</a></li>
-      </ul>
-    </div>
-</nav>
-
-<!--Форма входу початок-->
-<div class="modal fade" id=myModal role=dialog>
-  <div class="modal-dialog modal-sm">
-  <div class=modal-content>
-    <div class=modal-header>
-     <button type=button class=close data-dismiss=modal>&times;</button>
-      <h3>Увійти в систему</h3><br>
-      <text style=color:red; id="err"></text>
-    </div>
-    <div class=modal-body>
-      <form class=form-inline role=form>
-        <div class=form-group>
-          <label for=usrname><span class="glyphicon glyphicon-user"></span> Введіть логін</label>
-          <input type=email class=form-control id=email placeholder=Логін>
-        </div><br>
-        <div class=form-group>
-          <label for=psw><span class="glyphicon glyphicon-eye-open"></span> Введіть пароль</label>
-          <input type=password class=form-control id=pwd placeholder=Пароль>        
-        </div><br>
-          <a href=404.html>Нагадати пароль</a><br>
-        <div class="checkbox pull-right">
-          <label><input type=checkbox> Запам'ятати мене</label>
-        </div><br>
-      </form>
-    </div>
-    <div class=modal-footer>
-      <button type=submit class="btn btn-primary" onclick = "login_1();" id = "login_0">Увійти</button>
-    </div>
-  </div>
-  </div>
-</div>
-<!--Форма входу кінець-->
-<!--Добавление типа объекта начало-->
-<div class="modal fade" id=myModal2 role=dialog>
-<div class="modal-dialog modal-lg">
-<div class=modal-content>
-<div class=modal-body>
-<form class=form-inline role=form>
-<div class=form-group>
-<label for=usrname><span class="glyphicon glyphicon-home"></span> Створити новий тип закладу</label>
-<input type=email class=form-control id=name_type placeholder="назва типу" style=width:480px>
-<button type=submit class="btn btn-primary" data-dismiss=modal onclick="add_type();">Створити</button>
-</div><br>
-</form>
-</div>
-</div>
-</div>
-</div>
-<!--Добавление типа объекта конец-->
-<!--Добавление объекта начало-->
-<div class="modal fade" id=Modal_add_obj role=dialog>
-<div class="modal-dialog modal-lg">
-<div class=modal-content>
-<div class=modal-body>
-<form class=form-inline role=form>
-<div class=form-group>
-<label><span class="glyphicon glyphicon-home"></span> Додати об’єкт</label>
-<input class=form-control id_type="" id=add_name_inst placeholder="назва об’єкту" style=width:610px>
-<button type=submit class="btn btn-primary" data-dismiss=modal onclick="add_name();">Створити</button>
-</div><br>
-</form>
-</div>
-</div>
-</div>
-</div>
-<!--Добавление объекта конец-->
-
-<div class=container>
-<div class=row>
-<div class=col-md-12>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51921.635319801855!2d35.39077858664295!3d46.847729014720315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1470126747224" width=100% height=250 frameborder=0 style=border:0 allowfullscreen></iframe>
-<br>
-</div>
-</div>
-<h2>ID об'єкту: <span class="label label-default">ID</span></h2>
-<h3>Назва об'єкту: <span class="label label-default">ID</span></h2>
+<script src="/js/adm.js"></script>
+<h2>ID об'єкту: <span class="label label-default" id="id_object">{!id!}</span></h2>
+<h3>Назва об'єкту: <span class="label label-default">{!name!}</span></h2>
 <div class="panel panel-default">
 <div class=panel-heading>
 <h4 class=panel-title>
@@ -153,102 +12,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h3>Кількість людей в закладі</h3>
 <div class=row>
 <div class=col-sm-7>
-<div class=input-group><span class=input-group-addon>Наявна кількість відвідувачів-користувачів </span><input type=text value id=kilk_spozh class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>Наявна кількість відвідувачів-користувачів </span><input type=text value="{!people!}" id="kilk_spozh" class=form-control placeholder="Наведено приклад"></div><br>
 </div>
 <div class=col-sm-3>
 <div class=input-group><span class=input-group-addon>Дата запису</span><input type=text value id=date_kilk_spozh class=form-control placeholder="Календар або приклад дати"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick=kilk_spozh_()>Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('people' , $('#kilk_spozh').val())">Внести записи</button>
 </div>
 </div>
 <h3>Енергозберігаючі технології</h3>
 <div class=row>
 <div class=col-sm-7>
-<div class=input-group><span class=input-group-addon>Площа встановлених металопластикових вікон </span><input type=text value id=area_windws class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>Площа встановлених металопластикових вікон </span><input type=text value="{!window!}" id=area_windws class=form-control placeholder="Наведено приклад"></div><br>
 </div>
 <div class=col-sm-3>
 <div class=input-group><span class=input-group-addon>Дата запису</span><input type=text value id=data_area_windws class=form-control placeholder="Календар або приклад дати"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick=area_windws_()>Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('window' , $('#area_windws').val())">Внести записи</button>
 </div>
 </div>
 <h3>Електрична енергія, кількість по лічильнику або по нормі</h3>
 <div class=row>
 <div class=col-sm-5>
-<div class=input-group><span class=input-group-addon>Кількісь в кВт</span><input type=text value id=KolkW class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>Кількісь в кВт</span><input type=text value="{!electro!}" id=KolkW class=form-control placeholder="Наведено приклад"></div><br>
 </div>
 <div class=col-sm-5>
 <div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_kolkW class=form-control placeholder="Календар або приклад дати"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick=send_req_electro()>Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('electro' , $('#KolkW').val())">Внести записи</button>
 </div>
 </div>
 <h3>Газ, кількість по лічильнику або по нормі</h3>
 <div class=row>
 <div class=col-sm-5>
-<div class=input-group><span class=input-group-addon>Кількісь в м.куб.</span><input type=text value id=gas class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>Кількісь в м.куб.</span><input type=text value="{!gas!}" id=gas class=form-control placeholder="Наведено приклад"></div><br>
 </div>
 <div class=col-sm-5>
 <div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_gas class=form-control placeholder="Календар або приклад дати"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick=send_req_gas()>Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('gas' , $('#gas').val())">Внести записи</button>
 </div>
 </div>
 <h3>Теплова енергія, кількість по лічильнику або по нормі</h3>
 <div class=row>
 <div class=col-sm-5>
-<div class=input-group><span class=input-group-addon>В Гкал.</span><input type=text value id=teplo class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>В Гкал.</span><input type=text value="{!teplo!}" id=teplo class=form-control placeholder="Наведено приклад"></div><br>
 </div>
 <div class=col-sm-5>
 <div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_teplo class=form-control placeholder="Календар або приклад дати"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick=send_req_taryf_teplo()>Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('teplo' , $('#teplo').val())">Внести записи</button>
 </div>
 </div>
 <h3>Вода, кількість по лічильнику або по нормі</h3>
 <div class=row>
 <div class=col-sm-5>
-<div class=input-group><span class=input-group-addon>Кількісь в м.куб.</span><input type=text value id=water class=form-control placeholder="Наведено приклад"></div><br>
+<div class=input-group><span class=input-group-addon>Кількісь в м.куб.</span><input type=text value="{!water!}" id=water class=form-control placeholder="Наведено приклад"></div><br>
 </div>
 <div class=col-sm-5>
 <div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_water class=form-control placeholder="Календар, приклад дати"></div><br> </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick=send_req_taryf_water()>Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('water' , $('#water').val())">Внести записи</button>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="container">
-<div class=page-header>
-</div>
-
-<footer class="container-fluid" style="background-color: black; background-image: url(/images/black-polygon-background_1055-705.jpg); height: 150px; font-family: 'Lora', serif; ">
-<div class="container">
-<h5 style="color: white;">Управління соціально-економічного розвитку міста.</h5>
-<table style="width: 100%">
-<tr>
-<td><text style="display: table-cell; height: 100px; color: white; vertical-align: bottom; padding-bottom: 20px; font-size: 10px;">
-пошта: zaharchuk@mlt.gov.ua<br>
-тел.: 0619 42 69 01<br>
-факс: 0619 26 33 85<br>
-</text>
-</td>
-<td>
-<text style="display: table-cell; height: 100px; color: white; vertical-align: bottom; padding-bottom: 20px;"> Мелітополь, 2017</text>
-</td>
-<td style="vertical-align: bottom;">
-<a href=http://smartcity.mlt.gov.ua/ class="pull-right"><img src=/img/logo.png alt="Управління енергетики та енергоефективності міста Мелітополя." style="width: 50px; vertical-align: bottom; padding-bottom: 20px; padding-left: 10px;"></a>
-</td>
-</tr>
-</table>
-</div>
-</footer>
-
-</body>
-</html>

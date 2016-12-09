@@ -1,6 +1,18 @@
 <script src="/js/adm.js"></script>
 <h2>ID об'єкту: <span class="label label-default" id="id_object">{!id!}</span></h2>
 <h3>Назва об'єкту: <span class="label label-default">{!name!}</span></h2>
+
+<!--selector-->
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#data">Показники</a></li>
+  <li><a data-toggle="tab" href="#addon">Додаткові реквізити</a></li>  
+</ul>
+<!--selector_end-->
+<!--content-->
+<div class="tab-content">
+<!--main_start-->
+<div id="data" class="tab-pane fade in active">
+
 <div class="panel panel-default">
 <div class=panel-heading>
 <h4 class=panel-title>
@@ -83,5 +95,39 @@
 </div>
 </div>
 </div>
+</div>
+</div>
+
+</div>
+<!--main_end-->
+
+<!--addon_start-->
+<div id="addon" class="tab-pane fade">
+<div class="panel panel-info">
+<div class=panel-heading>
+<h4 class=panel-title>
+			<h1>Додаткові реквізити</h1>
+</h4>
+</div>
+<div class=panel-body>
+
+<form id="form_film">
+<div class=row>
+<div class=col-sm-12>	
+<div class=input-group><span class=input-group-addon>Телефон</span><input type=text id=telephone value="{!telephone!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Факс</span><input type=text id=fax value="{!fax!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Сайт закладу</span><input type=text id=site_url value="{!site_url!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Електронна пошта</span><input type=text id=e_mail value="{!e_mail!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Кількість персоналу</span><input type=text id=personal value="{!personal!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>ПІБ керівника закладу</span><input type=text id=director value="{!director!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+</div>
+</div>
+</form>
+
+</div>
+
+</div>
+</div>
+<!--addon_end-->
 </div>
 </div>

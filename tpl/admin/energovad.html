@@ -1,0 +1,128 @@
+<script src=/js/energo/admin/newfilm.js></script>
+<div class=container>
+
+<div class=row>
+<div class=col-md-12>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51921.635319801855!2d35.39077858664295!3d46.847729014720315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1470126747224" width=100% height=250 frameborder=0 style=border:0 allowfullscreen></iframe>
+<br>
+</div>
+</div>
+<h2>ID об'єкту: <span class="label label-success">{!id!}</span></h2>
+<h3>{!name!}: <span class="label label-warning" id="id_file">{!id!}</span></h2>
+
+
+<!--selector-->
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#main">Основні реквізити</a></li>
+  <li><a data-toggle="tab" href="#addon">Додаткові реквізити</a></li>
+  <li><a data-toggle="tab" href="#tarif">Тарифи</a></li>
+</ul>
+<!--selector_end-->
+<!--content-->
+<div class="tab-content">
+<!--main_start-->
+<div id="main" class="tab-pane fade in active">
+
+<div class="panel panel-warning">
+<div class=panel-heading>
+<h4 class=panel-title>
+		<h1>Основні реквізити об'єкту</h1>
+</h4>
+</div>
+
+<div class=panel-body>
+<form id="form_film">
+<div class=row>
+<div class=col-sm-12>
+
+<div class=input-group><span class=input-group-addon>Площа закладу</span><input type=text id=ploshad value="{!ploshad!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Кількість персоналу</span><input type=text id=personal value="{!personal!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Телефон</span><input type=text id=telephone value="{!telephone!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Факс</span><input type=text id=fax value="{!fax!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Сайт закладу</span><input type=text id=site_url value="{!site_url!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>Електронна пошта</span><input type=text id=e_mail value="{!e_mail!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>ПІБ керівника закладу</span><input type=text id=director value="{!director!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+<div class=input-group><span class=input-group-addon>ПІБ відповідального за внесення данних</span><input type=text id=pib_vidpov value="{!pib_vidpov!}" class=form-control placeholder="Наведено приклад того, що треба записувати"></div><br>
+</div>
+</div>
+</form>
+<div class="valids" id="validCheck"></div><button type=button class="btn btn-primary btn-md pull-right" onclick=Test_put() id=send_req_object_1>Внести записи</button>
+</div>
+
+</div>
+
+</div>
+<!--main_end-->
+<!--main_start-->
+<div id="addon" class="tab-pane fade">
+{!energomore!}
+</div>
+<!--addon_end-->
+<!--tariff_start-->
+<div id="tarif" class="tab-pane fade">
+<div class="panel panel-warning">
+<div class=panel-heading>
+<h4 class=panel-title>
+			<h1>Тарифи</h1>
+</h4>
+</div>
+
+<div class=panel-body>
+<h3>Електрична енергія, вартість</h3>
+<div class=row>
+<div class=col-sm-5>
+<div class=input-group><span class=input-group-addon>за кВт </span><input type=text class=form-control placeholder="Наведено приклад"></div><br>
+</div>
+<div class=col-sm-5>
+<div class=input-group><span class=input-group-addon>Дата початку дії тарифу</span><input type=text class=form-control placeholder="Календар або приклад дати"></div><br>
+</div>
+<div class=col-sm-2>
+<button type=button class="btn btn-primary btn-md" onclick=send_req_taryf_electro()>Внести записи</button>
+</div>
+</div>
+<h3>Газ, вартість</h3>
+<div class=row>
+<div class=col-sm-5>
+<div class=input-group><span class=input-group-addon>за 1000 куб.м.</span><input type=text class=form-control placeholder="Наведено приклад"></div><br>
+</div>
+<div class=col-sm-5>
+<div class=input-group><span class=input-group-addon>Дата початку дії тарифу</span><input type=text class=form-control placeholder="Календар або приклад дати"></div><br>
+</div>
+<div class=col-sm-2>
+<button type=button class="btn btn-primary btn-md" onclick=send_req_taryf_gas()>Внести записи</button>
+</div>
+</div>
+<h3>Теплова енергія, вартість</h3>
+<div class=row>
+<div class=col-sm-5>
+<div class=input-group><span class=input-group-addon>за ГКал</span><input type=text class=form-control placeholder="Наведено приклад"></div><br>
+</div>
+<div class=col-sm-5>
+<div class=input-group><span class=input-group-addon>Дата початку дії тарифу</span><input type=text class=form-control placeholder="Календар або приклад дати"></div><br>
+</div>
+<div class=col-sm-2>
+<button type=button class="btn btn-primary btn-md" onclick=send_req_taryf_teplo()>Внести записи</button>
+</div>
+</div>
+<h3>Вода, вартість</h3>
+<div class=row>
+<div class=col-sm-3>
+<div class=input-group><span class=input-group-addon>Водопостачання</span><input type=text class=form-control placeholder=Приклад></div><br>
+</div>
+<div class=col-sm-3>
+<div class=input-group><span class=input-group-addon>Водовідведення</span><input type=text class=form-control placeholder=Приклад></div><br>
+</div>
+<div class=col-sm-4>
+<div class=input-group><span class=input-group-addon>Дата початку дії тарифу</span><input type=text class=form-control placeholder="Приклад дати"></div><br>
+</div>
+<div class=col-sm-2>
+<button type=button class="btn btn-primary btn-md" onclick=send_req_taryf_water()>Внести записи</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<!--tariff_end-->
+</div>
+</div>

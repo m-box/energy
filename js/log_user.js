@@ -6,7 +6,7 @@ arr.method="user_info";
 	var request=JSON.stringify(arr);
 	var results=[];
 	                $.ajax({
-                    url:"api/user"
+                    url:"/api/user"
 					, type:'POST'
                     , data:'data=' + request
                     , success: function(res) {
@@ -28,7 +28,7 @@ arr.method="user_info";
 	var request=JSON.stringify(arr);
 	var results=[];
 	                $.ajax({
-                    url:"api/user"
+                    url:"/api/user"
 					, type:'POST'
                     , data:'data=' + request
                     , success: function(res) {

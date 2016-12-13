@@ -1,9 +1,10 @@
-function data (type , val)
+function data (type , val , date)
 {
 	var id_object = $('#id_object').text();
 	var quer = {};
 	quer.type = type;
 	quer.val = val;
+	quer.date = date;
 	quer.id_object = id_object;
 	var start = JSON.stringify(quer);
 	$.ajax({

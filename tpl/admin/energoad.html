@@ -27,10 +27,10 @@
 <div class=input-group><span class=input-group-addon>Наявна кількість відвідувачів-користувачів </span><input type=text value="{!people!}" id="kilk_spozh" class=form-control placeholder="Наприклад: 291"></div><br>
 </div>
 <div class=col-sm-3>
-<div class=input-group><span class=input-group-addon>Дата запису</span><input type=text value id=date_kilk_spozh class=form-control placeholder="Наприклад: 2017-10-14"></div><br>
+<div class=input-group><span class=input-group-addon>Дата запису</span><input type="text" value id="date_kilk_spozh" class=form-control placeholder="Наприклад: 2017-10-14"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick="data('people' , $('#kilk_spozh').val())">Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('people' , $('#kilk_spozh').val() , $('#date_kilk_spozh').val())">Внести записи</button>
 </div>
 </div>
 <!--вимкнено - до перегляду прав доступа
@@ -53,10 +53,10 @@
 <div class=input-group><span class=input-group-addon>Кількісь в кВт</span><input type=text value="{!electro!}" id=KolkW class=form-control placeholder="Наприклад: 6780"></div><br>
 </div>
 <div class=col-sm-5>
-<div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_kolkW class=form-control placeholder="Наприклад: 2017-10-14"></div><br>
+<div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type="text" id="data_kolkW" class="form-control" placeholder="Наприклад: 2017-10-14"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick="data('electro' , $('#KolkW').val())">Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('electro' , $('#KolkW').val() , $('#data_KolkW').val())">Внести записи</button>
 </div>
 </div>
 <h3>Газ, кількість по лічильнику або по нормі</h3>
@@ -65,10 +65,10 @@
 <div class=input-group><span class=input-group-addon>Кількісь в м.куб.</span><input type=text value="{!gas!}" id=gas class=form-control placeholder="Наприклад: 979"></div><br>
 </div>
 <div class=col-sm-5>
-<div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_gas class=form-control placeholder="Наприклад: 2017-10-14"></div><br>
+<div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type="text" id="data_gas" class="form-control" placeholder="Наприклад: 2017-10-14"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick="data('gas' , $('#gas').val())">Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('gas' , $('#gas').val() , $('#data_gas').val())">Внести записи</button>
 </div>
 </div>
 <h3>Теплова енергія, кількість по лічильнику або по нормі</h3>
@@ -80,7 +80,7 @@
 <div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_teplo class=form-control placeholder="Наприклад: 2017-10-14"></div><br>
 </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick="data('teplo' , $('#teplo').val())">Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('teplo' , $('#teplo').val() , $('#data_teplo').val())">Внести записи</button>
 </div>
 </div>
 <h3>Вода, кількість по лічильнику або по нормі</h3>
@@ -91,7 +91,7 @@
 <div class=col-sm-5>
 <div class=input-group><span class=input-group-addon>Дата зйому показників</span><input type=text value id=data_water class=form-control placeholder="Наприклад: 2017-10-14"></div><br> </div>
 <div class=col-sm-2>
-<button type=button class="btn btn-primary btn-md" onclick="data('water' , $('#water').val())">Внести записи</button>
+<button type=button class="btn btn-primary btn-md" onclick="data('water' , $('#water').val() , $('#data_water').val())">Внести записи</button>
 </div>
 </div>
 </div>

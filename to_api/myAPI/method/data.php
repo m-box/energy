@@ -59,12 +59,13 @@ if ($us['id_user_type']==3)
 		}		
 		
 		}
-}
+
 else
 {
 	return 'no_privilege!';
 }
 }
+
 
 
 

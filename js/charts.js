@@ -28,7 +28,7 @@ function get_req_energo1(){
 	
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'myapi/chart1',
+		url: '/myapi/chart1',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {
@@ -79,7 +79,7 @@ console.log (data);
 					  ]	}
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'myapi/chart2',
+		url: '/myapi/chart2',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {
@@ -122,7 +122,7 @@ google.charts.setOnLoadCallback(drawChart);
 					  ]	}
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: 'myapi/chart2',
+		url: '/myapi/chart2',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {

@@ -1,5 +1,5 @@
 function get_req_energo1(){
-	var idobj = $().text();
+	var idobj = $("#id_object").text();
 	var startDate = $("#startDate").text();
 	var endDate = $("#endDate").text();
 	var id = $("id_object").text();
@@ -21,7 +21,6 @@ function get_req_energo1(){
 	var data = {
 		"id":idobj,
 		"param":value,
-		method:"get_if",
 				data: [
 							["date",">=",startDate],
 							["date","<=", endDate],						
@@ -69,12 +68,11 @@ console.log (data);
 }
 //get energo2
 	function get_req_energo2(){
-	var idobj = $().text();
-	var startDate = $("#startDate").val();
-	var endDate = $("#endDate").val();
+	var idobj = $("#id_object").text();
+	var startDate = $("#startDate").text();
+	var endDate = $("#endDate").text();
 		var data = {
 		"id":idobj,
-		method:"get_if",
 				data: [
 							["date",">=",startDate],
 							["date","<=", endDate],						
@@ -105,7 +103,7 @@ google.charts.setOnLoadCallback(drawChart);
         legend: { position: "none" },
       };
         }
-        var chart = new google.visualization.LineChart(document.getElementById('columnchart_material'));
+        var chart = new google.visualization.LineChart(document.getElementById('columnchart_material2'));
 
         chart.draw(data, options);
       }	
@@ -113,12 +111,11 @@ google.charts.setOnLoadCallback(drawChart);
 }
 //get energo3
 	function get_req_energo3(){
-	var idobj = $().text();
-	var startDate = $("#startDate").val();
-	var endDate = $("#endDate").val();
+	var idobj = $("#id_object").text();
+	var startDate = $("#startDate").text();
+	var endDate = $("#endDate").text();
 		var data = {
 		"id":idobj,
-		method:"get_if",
 				data: [
 							["date",">=",startDate],
 							["date","<=", endDate],						
@@ -149,7 +146,7 @@ google.charts.setOnLoadCallback(drawChart);
         legend: { position: "none" },
       };
         }
-        var chart = new google.visualization.LineChart(document.getElementById('columnchart_material'));
+        var chart = new google.visualization.LineChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
       }	

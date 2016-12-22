@@ -39,7 +39,7 @@ google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
 
  function drawChart() {
-	 var data= result.data;
+	 var data= result;
 
 console.log (data);
         var data = google.visualization.arrayToDataTable(data);

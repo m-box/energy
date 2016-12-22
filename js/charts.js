@@ -42,7 +42,7 @@ google.charts.setOnLoadCallback(drawChart);
 	 var data= result;
 
 console.log (data);
-        var data = google.visualization.arrayToDataTable(data);
+        var datas = google.visualization.arrayToDataTable(data);
 		 var options = {
           title: 'Показники',
           curveType: 'function',
@@ -50,7 +50,7 @@ console.log (data);
         }
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-        chart.draw(data, options);
+        chart.draw(datas, options);
       }
 
 

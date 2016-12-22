@@ -4,7 +4,7 @@ function chart2 ($data)
 	
 	$data=json_decode($data, true);
 	if ($data['id']=="" or !isset($data['id'])) {$err[$err_n]="id_type_undefined"; $err_n++; return $err;}
-
+	if ($data['param']=="" or !isset($data['param'])) {$err[$err_n]="param_undefined"; $err_n++; return $err;}
 	if ($data['data']=="" or !isset($data['data']) or count($data['data'])<1) {$err[$err_n]="data_undefined"; $err_n++; return $err;}
 
 	global $_CONFIG;
@@ -18,27 +18,19 @@ function chart2 ($data)
 	}
 			$soc='`id_object` '.' IN '." ".'(?a)'." ";
 	$where=implode(' AND ', $w);
-	$rows = $db -> getAll("SELECT * FROM data WHERE ?p AND ".$soc , $where , $type);
+	$rows = $db -> getAll("SELECT * FROM data WHERE `type`=?s AND ?p AND ".$soc , $data['param'] , $where , $type);
 	
 	for ($i=0;$i<count($objs);$i++)
 	{	
-		$electro=0;
-		$gas=0;
-		$teplo=0;
-		$water=0;
+		$sum=0;
 		for ($c=0;$c<count($rows);$c++)
 		{
 			if ($objs[$i]['id']==$rows[$c]['id_object'])
-				{
-					if ($rows[$c]['electro']>$electro) $electro=$rows[$c]['electro'];
-					if ($rows[$c]['gas']>$gas) $gas=$rows[$c]['gas'];
-					if ($rows[$c]['teplo']>$teplo) $teplo=$rows[$c]['teplo'];
-					if ($rows[$c]['water']>$water) $water=$rows[$c]['water'];
-				}
+				{ $sum=$sum+$rows[$c]['val'];}
 		}
-		$row[$i]=array($objs[$i]['name'], $electro , $gas , $teplo , $water);
+		$row[$i]=array($objs[$i]['name'], $sum);
 	}
-	$cols= array('Заклад'=>'string', 'Електроенергія'=>'number', 'Газ'=>'number', 'Теплоенегія'=>'number', 'Вода'=>'number');
+	$cols= array('Заклад'=>'string', 'Показник'=>'number');
 	    $dataTable = array(
     'cols' => $cols,
     'rows' => $row

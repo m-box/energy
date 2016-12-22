@@ -54,15 +54,7 @@ console.log (data);
       }
 
 
-        var options = {
-          title: 'Данні',
-          curveType: 'function',
-          legend: { position: 'bottom' }
-        };
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
         	}
         	 }})
 }

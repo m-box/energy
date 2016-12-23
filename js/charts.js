@@ -41,8 +41,8 @@ google.charts.setOnLoadCallback(drawChart);
  function drawChart() {
 	 var data= result;
 
-console.log (data);
-        var datas = google.visualization.arrayToDataTable(data);
+console.log (typeof data);
+        var datas = new google.visualization.DataTable(data);
 		 var options = {
           title: 'Показники',
           curveType: 'function',
@@ -52,9 +52,6 @@ console.log (data);
 
         chart.draw(datas, options);
       }
-
-
-
         	}
         	 }})
 }
@@ -88,7 +85,7 @@ google.charts.setOnLoadCallback(drawChart);
  function drawChart() {
 	 var data=result.data;
 
-        var data = google.visualization.arrayToDataTable(data);
+        var data = new google.visualization.DataTable(data);
 		 var options = {
         title: "Title",
         bar: {groupWidth: "95%"},
@@ -131,14 +128,14 @@ google.charts.setOnLoadCallback(drawChart);
  function drawChart() {
 	 var data=result.data;
 
-        var data = google.visualization.arrayToDataTable(data);
+        var data = new google.visualization.DataTable(data);
 		 var options = {
         title: "Title",
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
         }
-        var chart = new google.visualization.LineChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
       }	

@@ -17,5 +17,5 @@ else
 		$request['err']="method_undifined";
 	}
 	
-print_r(json_encode($request));
+print_r(json_encode($request , JSON_NUMERIC_CHECK));
 ?>

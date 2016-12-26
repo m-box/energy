@@ -34,6 +34,7 @@ function get_req_energo1(){
 		success: function(res) {
 		var result = JSON.parse(res);
 		if (result.data!="error"){
+			/*
 
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
@@ -41,8 +42,13 @@ google.charts.setOnLoadCallback(drawChart);
  function drawChart() {
 	 var data= result;
 
-console.log (typeof data);
-        var datas = new google.visualization.DataTable(data);
+console.log (data);
+var datas = new google.visualization.DataTable();
+			datas.addColumn('string', 'Назва');
+			datas.addColumn('number', 'Показник');
+			datas.addRows(data.rows);
+			
+  
 		 var options = {
           title: 'Показники',
           curveType: 'function',
@@ -52,6 +58,46 @@ console.log (typeof data);
 
         chart.draw(datas, options);
       }
+
+google.charts.load('current', {'packages':['corechart']});
+//google.charts.setOnLoadCallback(drawChart);
+var data = google.visualization.DataTable();
+			data.addColumn('string', 'Дата');
+			data.addColumn('number', 'Показатель');
+			data.addRows(result['rows']);
+var options = {
+title: 'Энергоэффективность' // Заголовок.
+};
+var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+*/
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'X');
+      data.addColumn('number', 'Кол-во');
+
+      data.addRows(result.rows);
+	  console.log(result.rows);
+
+      var options = {
+        hAxis: {
+          title: 'Показник'
+        },
+        vAxis: {
+          title: 'Дата'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart.draw(data, options);
+    }      
+
+
         	}
         	 }})
 }
@@ -85,7 +131,7 @@ google.charts.setOnLoadCallback(drawChart);
  function drawChart() {
 	 var data=result.data;
 
-        var data = new google.visualization.DataTable(data);
+        var data = google.visualization.arrayToDataTable(data);
 		 var options = {
         title: "Title",
         bar: {groupWidth: "95%"},
@@ -128,14 +174,14 @@ google.charts.setOnLoadCallback(drawChart);
  function drawChart() {
 	 var data=result.data;
 
-        var data = new google.visualization.DataTable(data);
+        var data = google.visualization.arrayToDataTable(data);
 		 var options = {
         title: "Title",
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
         }
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.LineChart(document.getElementById('piechart'));
 
         chart.draw(data, options);
       }	

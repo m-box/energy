@@ -195,4 +195,52 @@ function drawBasic() {
     }
       }	
        }})
+}	function get_req_energo4(){
+	var idobj = $("#id_object").text();
+	var startDate = $("#startDate").text();
+	var endDate = $("#endDate").text();
+		var data = {
+		"id":idobj,
+		data: [
+				["date",">=",startDate],
+				["date","<=", endDate],						
+					  ]	}
+	var requery=JSON.stringify(data);
+	var sub_req = $.ajax({
+		url: '/myapi/chart3',
+		type: 'post',
+		data:'data='+ requery,
+		success: function(res) {
+		var result = JSON.parse(res);
+		if (result.data!="error"){
+
+
+
+google.charts.load('current', {packages: ['corechart']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'X');
+      data.addColumn('number', 'Кол-во');
+
+      data.addRows(result.rows);
+	  console.log(result.rows);
+
+      var options = {
+        hAxis: {
+          title: 'Показник'
+        },
+        vAxis: {
+          title: 'Дата'
+        }
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+      chart.draw(data, options);
+    }
+      }	
+       }})
 }

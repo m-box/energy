@@ -201,15 +201,30 @@ function get_req_energo4(){
 	var idobj = $("#id_object").text();
 	var startDate = $("#startDate").text();
 	var endDate = $("#endDate").text();
+	var value=$('input[name="optradio1"]:checked').val();
+	switch (value) {
+  case "Кількість кВт":
+    value='electro';
+    break
+    case "Кількість газу":
+    value='gas';
+    break
+    case "Кількість води":
+    value='water';
+    break;
+    case "Кількість тепла":
+    value='teplo';
+    break;
+}
 		var data = {
-		"id":idobj,
+		"param":value,
 		data: [
 				["date",">=",startDate],
 				["date","<=", endDate],						
 					  ]	}
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: '/myapi/chart4',
+		url: '/myapi/chart3',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {

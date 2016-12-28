@@ -10,7 +10,7 @@ include ("lib/templater.php");
 
 	if (count($obj)!==0)
 		{
-			$run=template_data("tpl/analizs23.html","objecttype",$obj[0]);
+			$run=template_data("tpl/analiz1.html","objecttype",$obj[0]);
 
 			$tpl=file_get_contents('tpl/index.html');
 			$tpl=str_replace("{!content!}",$run,$tpl);	

@@ -195,7 +195,9 @@ function drawBasic() {
     }
       }	
        }})
-}	function get_req_energo4(){
+}
+// get energo 4
+function get_req_energo4(){
 	var idobj = $("#id_object").text();
 	var startDate = $("#startDate").text();
 	var endDate = $("#endDate").text();
@@ -207,7 +209,7 @@ function drawBasic() {
 					  ]	}
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: '/myapi/chart3',
+		url: '/myapi/chart4',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {
@@ -241,6 +243,71 @@ function drawBasic() {
 
       chart.draw(data, options);
     }
+      }
+       }})
+}
+// get energo 5
+	function get_req_energo5(){
+	var idobj = $("#id_object").text();
+	var startDate = $("#startDate").text();
+	var endDate = $("#endDate").text();
+	var value=$('input[name="optradio1"]:checked').val();
+	switch (value) {
+  case "Кількість кВт":
+    value='electro';
+    break
+    case "Кількість газу":
+    value='gas';
+    break
+    case "Кількість води":
+    value='water';
+    break;
+    case "Кількість тепла":
+    value='teplo';
+    break;
+}
+		var data = {
+		"id":idobj,
+		"param":value,
+				data: [
+							["date",">=",startDate],
+							["date","<=", endDate],						
+					  ]	}
+	var requery=JSON.stringify(data);
+	var sub_req = $.ajax({
+		url: '/myapi/chart5',
+		type: 'post',
+		data:'data='+ requery,
+		success: function(res) {
+		var result = JSON.parse(res);
+		if (result.data!="error"){
+
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'X');
+      data.addColumn('number', 'Кол-во');
+
+      data.addRows(result.rows);
+	  console.log(result.rows);
+
+      var options = {
+        hAxis: {
+          title: 'Показник'
+        },
+        vAxis: {
+          title: 'Дата'
+        }
+      };
+
+      var chart = new google.visualization.ColumnChart(document.getElementById('columnchart_material5'));
+
+      chart.draw(data, options);
+    }  
+
       }	
        }})
 }

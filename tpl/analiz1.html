@@ -76,57 +76,16 @@
 </div>
 
 <!--selector-->
-<ul class="nav nav-tabs">
-  <li class="active"><a data-toggle="tab" href="#analiz1">Аналіз 1</a></li>
-  <li><a data-toggle="tab" href="#analiz2">Аналіз 2</a></li>  
-  <li><a data-toggle="tab" href="#analiz3">Аналіз 3</a></li>    
-</ul>
+
 <!--selector_end-->
 
 <!--content-->
-<div class="tab-content">
-	<!--span-panel_1_start-->
-	<div id="analiz1" class="tab-pane fade in active">
-		<h1><b>Динаміка споживання по закладам</b></h1>
-<!--Аналіз 1_start-->
 <div class=well>
-<div class="row">
+<div class=row>
 <button type=button class="btn btn-primary pull-right" onclick="get_req_energo1()">Аналізувати</button>
 </div>
 <h3>Діаграма витрат</h3>
-<div id="curve_chart" style="width:900px;height:500px"></div>
-</div>
-<!--Аналіз 1_end-->
-	</div>
-<!--span-panel_1_end-->
-<!--span-panel_2_start-->
-	<div id="analiz2" class="tab-pane fade">		
-		<h1><b>Витрати ресурсів закладами</b></h1>
-<!--Аналіз 2_start-->
-<div class=well>
-<div class=row>
-<button type=button class="btn btn-primary pull-right" onclick="get_req_energo2()">Аналізувати</button>
-</div>
-<h3>Графік витрат</h3>
-<div id=columnchart_material2 style=width:1000px;height:500px></div>
-</div>
-<!--Аналіз 2_end-->
-	</div>
-<!--span-panel_2_end-->
-<!--span-panel_3_start-->
-	<div id="analiz3" class="tab-pane fade">		
-		<h1><b>Структура витрат</b></h1>
-<!--Аналіз 3_start-->
-<div class=well>
-<div class=row>
-<button type=button class="btn btn-primary pull-right" onclick="get_req_energo3()">Аналізувати</button>
-</div>
-<h3>Діаграма витрат</h3>
-<div id=piechart style=width:900px;height:500px></div>
-</div>
-<!--Аналіз 3_end-->			
-	</div>
-<!--span-panel_3_end-->
+<div id="piechart2" style=width:900px;height:500px></div>
 </div>
 <!--content_end-->
 

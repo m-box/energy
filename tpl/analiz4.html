@@ -10,13 +10,13 @@
 <br>
 </div>
 </div>
-<h5><b>ID категорії: </b><span class="label label-danger" id="id_object">{!id!}</span></h5>
-<h2>Назва категорія: <span class="label label-success">{!name!}</span></h2>
+<!--<h5><b>ID категорії: </b><span class="label label-danger" id="id_object">{!id!}</span></h5>
+<h2>Тип об'ектів: <span class="label label-success">{!name!}</span></h2>-->
 </div>
 
 <div class="container">
 
-<h2><span class="label label-info">Муніципальне майно</span></h2>
+<h2><span class="label label-info">Муніципальне майно. Структура витрат</span></h2>
 <link href=/css/datepicker.css rel=stylesheet>
 <script src=/js/bootstrap-datepicker.js></script>
 <script src=/js/dt.js></script>
@@ -41,38 +41,49 @@
 </tbody>
 </table>
 
-<h3>Оберіть ресурс</h3>
+<h3>Оберіть типи об'єктів для аналізу</h3>
 
-<div class=row>
-<div class=col-md-3>
-<div class=radio>
-<label><input type=radio name=optradio1 value="electro">Кількість кВт</label>
-</div>
-<div class=radio>
-<label><input type=radio name=optradio1 value="gas">Кількість газу</label>
-</div>
-<div class=radio>
-<label><input type=radio name=optradio1 value="water">Кількість води</label>
-</div>
-<div class=radio>
-<label><input type=radio name=optradio1 value="teplo">Кількість тепла</label>
-</div>
-</div>
-<div class=col-md-3>
-<div class=radio>
-<label><input type=radio name=optradio1>Вартість кВт</label>
-</div>
-<div class=radio>
-<label><input type=radio name=optradio1>Вартість газу</label>
-</div>
-<div class=radio>
-<label><input type=radio name=optradio1>Вартість води</label>
-</div>
-<div class=radio>
-<label><input type=radio name=optradio1>Вартість тепла</label>
-</div>
-</div>
-</div>
+	<div class="row">
+	<div class="col-md-6">
+	<!--Вибір підтипу-->
+	<div class="well">
+	<div class="radio">
+		<label><input type="radio" name="optradio">Дошкільні навчальні заклади </label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Загальноосвітні навчальні заклади </label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Заклади охорони здоров'я </label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Заклади фізичної культури </label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Соціальний захист населення </label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Заклади культури </label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Позашкільні навчальні заклади </label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Апарат управління</label>
+	</div>
+	<div class="radio">
+		<label><input type="radio" name="optradio">Усі заклади </label>
+	</div>
+	</div>
+	</div>
+	<div class="col-md-6">
+
+	<h4>Список закладів обраного підтипу</h4>
+	
+	<!--Тут виводимо список закладів які входять в даний тип: усі Дитячі садочки якщо вибрані "Дошкільні навчальні заклади, чи усі школи коли вибрана категорія "Школи/навчальні заклади середньої освіти", те що у нас виводиться коли ми серфимо по категоріям в "Енергозбереженні" у вигляді дів або фрейма з параметрами:<iframe class="spytest" src="" scrolling="yes" frameborder="0"  width="450" height="250">{!список!}</iframe>-->
+
+	</div>
+	</div>
 
 </div>
 

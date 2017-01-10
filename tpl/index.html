@@ -58,13 +58,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
 	</div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Початкова</a></li>
+      <ul class="nav navbar-nav">       
+        <li><a href="/">Початкова</a></li>
         <li><a href="/ugoda_meriv_shid">"Угода Мерів-Схід"</a></li>
-        <li><a href="/energoanaliz">Енергоаналіз</a></li>
-		<li><a href="/types">Аналіз типів закладів</a></li> 
-        <li><a href="/faq">Питання та відповіді</a></li> 
-		
+        <li class="dropdown">
+          <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Енергоаналіз
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">            
+            <li><a href="/energoanaliz">Енергоаналіз 1</a></li>
+            <li><a href="/energoanaliz">Енергоаналіз 2</a></li>
+            <li><a href="/energoanaliz">Енергоаналіз 3</a></li>
+            <li><a href="/types">Енергоаналіз 4</a></li>
+            <li><a href="#">Енергоаналіз 5</a></li>            
+          </ul>
+        </li>
+        <li><a href="/faq">Питання та відповіді</a></li>
+                 
       </ul>
       <ul class="nav navbar-nav navbar-right">        
         <!--<li><a href="registration.html"><span class="glyphicon glyphicon-user"></span> Реєстрація</a></li>-->

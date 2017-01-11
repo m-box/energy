@@ -1,0 +1,192 @@
+<!--скрипт чартов-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="/js/charts.js"></script>
+
+<div class=container>
+<div class=row>
+<div class=col-md-12>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51921.635319801855!2d35.39077858664295!3d46.847729014720315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1470126747224" width=100% height=250 frameborder=0 style=border:0 allowfullscreen></iframe>
+<br>
+</div>
+</div>
+<h5><b>ID категорії: </b><span class="label label-danger" id="id_object">{!id!}</span></h5>
+<h2>Назва категорія: <span class="label label-success">{!name!}</span></h2>
+</div>
+
+<div class="container">
+
+<h2><span class="label label-info">Муніципальне майно. Зведено-порівняльна таблиця.</span></h2>
+<link href=/css/datepicker.css rel=stylesheet>
+<script src=/js/bootstrap-datepicker.js></script>
+<script src=/js/dt.js></script>
+
+<h3>Оберіть проміжок часу</h3>
+<div class=well>
+<div class="alert alert-error" id=alert>
+<strong>Оберіть початкову та кінцеву дати</strong>
+</div>
+<table class=table>
+<thead>
+<tr>
+<th>Початкова дата <button type=button class="btn btn-default" id=dp4 data-date-format=yyyy-mm-dd data-date=2016-01-01>Вибрати</button></th>
+<th>Кінцева дата <button type=button class="btn btn-default" id=dp5 data-date-format=yyyy-mm-dd data-date=2016-10-25>Вибрати</button></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td id=startDate>2016-01-01</td>
+<td id=endDate>2016-10-25</td>
+</tr>
+</tbody>
+</table>
+<h3>Оберіть ресурс</h3>
+
+<div class=row>
+<div class=col-md-3>
+<div class=radio>
+<label><input type=radio name=optradio1 value="electro">Кількість кВт</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1 value="gas">Кількість газу</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1 value="water">Кількість води</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1 value="teplo">Кількість тепла</label>
+</div>
+</div>
+<div class=col-md-3>
+<div class=radio>
+<label><input type=radio name=optradio1>Вартість кВт</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1>Вартість газу</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1>Вартість води</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1>Вартість тепла</label>
+</div>
+</div>
+</div>
+
+</div>
+
+<!--
+1. порівняння споживання енергії одним закладом з іншим закладом (за період)
+2. порівняти один заклад за певний період з самим собою але за інший період
+3. можливість порівняння групи закладів
+4. порівнянно одного закладу по відношенню до групи
+5. порівняння одного закладу чи групи з середньоміським споживанням
+6. споживання енергії на один квадратий метр чи на одного учня
+-->
+<!--selector-->
+<ul class="nav nav-tabs">
+  <li class="active" ><a data-toggle="tab" href="#analiz61">Порівняти заклади</a></li>  
+  <li><a data-toggle="tab" href="#analiz62">Порівняти періоди</a></li>
+  <li><a data-toggle="tab" href="#analiz63">Порівняти групи</a></li>
+  <li><a data-toggle="tab" href="#analiz64">Споживання відносно групи</a></li>
+  <li><a data-toggle="tab" href="#analiz65">Споживання відносно середннього</a></li>
+  <li><a data-toggle="tab" href="#analiz66">Споживання / площа, користувачі</a></li>
+</ul>
+<!--selector_end-->
+
+<!--content-->
+<div class="tab-content">
+
+<!--span-panel_61_start-->
+	<div id="analiz2" class="tab-pane fade in active">		
+		<h1><b>Таблиця по закладам</b></h1>
+<!--таблиця 61_start-->
+<div class=well>
+<div class=row>
+<button type=button class="btn btn-primary pull-right" onclick="get_req_table1()">Аналізувати</button>
+</div>
+<h3>Графік витрат</h3>
+<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+</div>
+<!--таблиця 61_end-->
+	</div>
+<!--span-panel_61_end-->
+
+<!--span-panel_62_start-->
+	<div id="analiz2" class="tab-pane fade in active">		
+		<h1><b>Таблиця по періодам</b></h1>
+<!--таблиця 62_start-->
+<div class=well>
+<div class=row>
+<button type=button class="btn btn-primary pull-right" onclick="get_req_table2()">Аналізувати</button>
+</div>
+<h3>Графік витрат</h3>
+<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+</div>
+<!--таблиця 62_end-->
+	</div>
+<!--span-panel_62_end-->
+
+<!--span-panel_63_start-->
+	<div id="analiz2" class="tab-pane fade in active">		
+		<h1><b>Таблиця групи закладів</b></h1>
+<!--таблиця 63_start-->
+<div class=well>
+<div class=row>
+<button type=button class="btn btn-primary pull-right" onclick="get_req_table3()">Аналізувати</button>
+</div>
+<h3>Графік витрат</h3>
+<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+</div>
+<!--таблиця 63_end-->
+	</div>
+<!--span-panel_63_end-->
+
+<!--span-panel_64_start-->
+	<div id="analiz2" class="tab-pane fade in active">		
+		<h1><b>Таблиця споживання групи</b></h1>
+<!--таблиця 64_start-->
+<div class=well>
+<div class=row>
+<button type=button class="btn btn-primary pull-right" onclick="get_req_table4()">Аналізувати</button>
+</div>
+<h3>Графік витрат</h3>
+<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+</div>
+<!--таблиця 64_end-->
+	</div>
+<!--span-panel_64_end-->
+
+<!--span-panel_65_start-->
+	<div id="analiz2" class="tab-pane fade in active">		
+		<h1><b>Таблиця споживання між закладами</b></h1>
+<!--таблиця 65_start-->
+<div class=well>
+<div class=row>
+<button type=button class="btn btn-primary pull-right" onclick="get_req_table5()">Аналізувати</button>
+</div>
+<h3>Графік витрат</h3>
+<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+</div>
+<!--таблиця 65_end-->
+	</div>
+<!--span-panel_65_end-->
+
+<!--span-panel_66_start-->
+	<div id="analiz2" class="tab-pane fade in active">		
+		<h1><b>Таблиця споживання на площу та кількість користувачів</b></h1>
+<!--таблиця 66_start-->
+<div class=well>
+<div class=row>
+<button type=button class="btn btn-primary pull-right" onclick="get_req_table6()">Аналізувати</button>
+</div>
+<h3>Графік витрат</h3>
+<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+</div>
+<!--таблиця 66_end-->
+	</div>
+<!--span-panel_66_end-->
+</div>
+<!--content_end-->
+
+</div>

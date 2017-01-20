@@ -78,7 +78,7 @@ function table() {
 		success: function(values) {
 		var values = JSON.parse(values);
 		if (result!="error"){
-		for (i=0; i<length(name.rows[]); i++) {
+		for (i=0; i<length(name.rows); i++) {
 	$('#table').append('<tr><td>'+name.rows[i].[0]+'</td><td>'+values.rows[0].[1]+'</td><td>'+values.rows[1].[1]+'</td><td>'+values.rows[2].[1]+'</td><td>'+values.rows[3].[1]+'</td>	<td>'+values.rows[9].[1]+'</td><td>'+values.rows[10].[1]+'</td><td>'+sum0 = sum(values.rows[0].[1]+ values.rows[1].[1]+values.rows[2].[1]+values.rows[3].[1]+values.rows[9].[1]+values.rows[10].[1])+'</td><td>'+values.rows[12].[1]+'</td><td>'+values.rows[13].[1]+'</td><td>'+values.rows[14].[1]+'</td><td>'+values.rows[15].[1]+'</td><td>'+values.rows[21].[1]+'</td><td>'+values.rows[22].[1]+'</td><td>'+ sum1 = sum(values.rows[12].[1]+values.rows[13].[1]+values.rows[14].[1]+values.rows[15].[1]+values.rows[21].[1]+values.rows[22].[1])+'</td><td>'+values.rows[22].[1]*100/values.rows[10].[1]-100+'</td>	<td>'+values.rows[22].[1]-values.rows[10].[1]+'</td><td>'+sum1*100/sum0-100+'</td><td>'+sum1-sum0+'</td></tr> ') 
 	}}}})})})}
 	/*-----*/

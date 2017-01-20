@@ -5,7 +5,7 @@ include ("lib/templater.php");
 	
 	$db = new SafeMySQL($_CONFIG);
 
-	$obj = $db -> getAll('SELECT * FROM  `objecttype` WHERE id=?i', $obj_id);
+	$obj = $db -> getAll('SELECT * FROM  `object` WHERE id=?i', $obj_id);
 
 
 	if (count($obj)!==0)

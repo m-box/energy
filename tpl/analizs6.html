@@ -26,6 +26,19 @@
 <script src=/js/bootstrap-datepicker.js></script>
 <script src=/js/dt.js></script>
 
+  <style type="text/css">
+   TABLE {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   TH {
+    background: #b0e0e6; /* Цвет фона */
+   }
+  </style>
 <!--
 1. порівняння споживання енергії одним закладом з іншим закладом (за період)
 2. порівняти один заклад за певний період з самим собою але за інший період
@@ -54,7 +67,7 @@
 <!--таблиця 61_start-->
 <div class=well>
 <!--Селектор року_start-->
-  <select name="year61">
+  <select id="date">
     <option value="2010">2010</option>
     <option value="2011">2011</option>
     <option value="2012">2012</option>
@@ -70,6 +83,7 @@
 </div  onLoad="table()">
 <h3>Графік витрат</h3>
 <div id="table" style="width:1000px; height:500px"></div>
+
 </div>
 <!--таблиця 61_end-->
 	</div>

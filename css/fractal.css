@@ -50,3 +50,15 @@
 }
 .navbar-default .navbar-link:hover {
   color: #000000;
+}
+.energy table {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+.energy td th {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+.energy th {
+    background: #b0e0e6; /* Цвет фона */
+   }

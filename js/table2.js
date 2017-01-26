@@ -1,8 +1,8 @@
 function table() {
 	$('#table').html('<table>')
-	$('#table').append('<thead><tr><td rowspan="3">заклади</td><td colspan="7" rowspan="2">год-1</td><td colspan="7" rowspan="2">год</td><td colspan="4">відхилення</td></tr><tr><td colspan="2">листопад 2015 від листопад 2016</td> <td colspan="2">2016 від 2015</td>/tr> <tr> <td>січень</td><td>лютий</td><td>березень</td><td>квітень</td><td>жовтень</td><td>листопад</td><td>з початку року</td><td>січень</td><td>лютий</td><td>березень</td><td>квітень</td><td>жовтень</td> <td>листопад</td><td>з початку року</td><td>%</td>  <td>м. куб</td> <td>%</td><td>м. куб</td></tr></thead>' ) 
+	$('#table').append('    <tr> <td> Найменування </td>    <td> Січень </td>  <td>Лютий</td> <td>Березень</td> <td>Квітень</td><td>Травень</td><td>Червень</td> <td>Липень</td> <td>Серпень </td>  <td>Вересень</td> <td>++Жовтень</td> <td>Листопад</td><td>Грудень</td><td>Всього за рік</td></tr>' ) 
 	function aparat_upr(){
-		$('#table').append('<tr><td>"Всього аппарату"</td><td>"sum 01"</td><td>"sum 02"</td><td>"sum 03"</td><td>"sum 04"</td>	<td>"sum 10"</td><td>"sum 11"</td><td>"sum sum1=sum(2,3,4,5,6,7)"</td><td>"sum 01++"</td><td>"sum 02++"</td><td>"sum 03++"</td><td>"sum 04++"</td><td>"sum 10++"</td><td>"sum 11++"</td><td>"sum +sum(8,9,10,11,12,13)+"</td><td>"11"*100/"11++"-100</td>	<td>sum2-sum1</td><td>sum2*100</td>	<td></td></tr> ') 
+		//$('#table').append('<tr><td>"Всього аппарату"</td><td>"sum 01"</td><td>"sum 02"</td><td>"sum 03"</td><td>"sum 04"</td>	<td>"sum 10"</td><td>"sum 11"</td><td>"sum sum1=sum(2,3,4,5,6,7)"</td><td>"sum 01++"</td><td>"sum 02++"</td><td>"sum 03++"</td><td>"sum 04++"</td><td>"sum 10++"</td><td>"sum 11++"</td><td>"sum +sum(8,9,10,11,12,13)+"</td><td>"11"*100/"11++"-100</td>	<td>sum2-sum1</td><td>sum2*100</td>	<td></td></tr> ') 
 		var idobj = 1;
 		var id = 0;
 		var sum1
@@ -25,10 +25,12 @@ function table() {
 				data:'data='+ requery_name,
 				success: function(names) {
 			var names = JSON.parse(names);
+			var arr_ = names.rows.length;
+			console.log(arr_)
 			var arr = names.rows;
-		for (i=1; i==arr; i++) {
-		var arr = names.rows[i];
-		console.log(arr[0]);
+			var ch = 0
+		for (i=1; i<=arr_; i++) {
+		arr = names.rows[i][0]
 		id = i
 		var data = {
 			"id":id,
@@ -48,11 +50,13 @@ function table() {
 			var values = JSON.parse(values);
 			
 			var arr_1 = values.rows;
-			console.log(arr_1[0]);
-			for (j=0; j==arr.length; j++)
-		$('#table').append('<tr><td>'+arr[0]+'</td><td>'+arr_1[0]+'</td><td>'+arr_1[1]+'</td><td>'+arr_1[2]+'</td><td>'+arr_1[3]+'</td>	<td>'+arr_1[9]+'</td><td>'+arr_1[10]+'</td><td>'+  /*sum1 = (arr_1[0][1]+arr_1[1][1]+arr_1[2][1]+arr_1[3][1]+arr_1[9][1]+arr_1[10][1])*/+'</td><td>'+arr_1[12][1]+'</td><td>'+arr_1[13][1]+'</td><td>'+arr_1[14][1]+'</td><td>'+arr_1[15][1]+'</td><td>'+arr_1[21][1]+'</td><td>'+arr_1[22][1]+'</td><td>'+ /*sum2 = (arr_1[12][1]+arr_1[13][1]+arr_1[14][1]+arr_1[15][1]+arr_1[21][1]+arr_1[22][1])*/+'</td><td>'+arr_1[22][1]*100/arr_1[10][1]-100+'</td>	<td>'+arr_1[22][1]-arr_1[10][1]+'</td><td>'+/*sum1*100/sum0-100*/+'</td><td>'+/*sum1-sum0*/+'</td></tr> ')
 			
-		}
+				console.log(arr)
+				var sum = arr_1[0][1] + arr_1[1][1] + arr_1[2][1] + arr_1[3][1] + arr_1[4][1] + arr_1[5][1] + arr_1[6][1] + arr_1[7][1] + arr_1[8][1] + arr_1[9][1] + arr_1[10][1] + arr_1[11][1] + arr_1[12][1]
+		$('#table').append('<tr><td>'+String(arr)+'</td><td>'+arr_1[0][1]+'</td><td>'+arr_1[1][1]+'</td><td>'+arr_1[2][1]+'</td><td>'+arr_1[3][1]+'</td>	<td>'+ arr_1[4][1]+'</td><td>'+ arr_1[5][1]+'</td><td>'+  arr_1[6][1]+'</td><td>'+arr_1[7][1]+'</td><td>'+arr_1[8][1]+'</td><td>'+arr_1[9][1]+'</td><td>'+arr_1[10][1]+'</td><td>'+arr_1[11][1]+'</td><td>'+sum.toFixed(2)+'</td></tr> ')
+			
+		
+	}
 				})
 			}
 				}

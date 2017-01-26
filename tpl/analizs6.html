@@ -2,6 +2,13 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script src="/js/charts.js"></script>
+<script src="/js/table2.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/log_user.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/fractal.css">
+<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
 
 <div class=container>
 <div class=row>
@@ -26,7 +33,7 @@
 <div class="alert alert-error" id=alert>
 <strong>Оберіть початкову та кінцеву дати</strong>
 </div>
-<table class=table>
+<table class=table >
 <thead>
 <tr>
 <th>Початкова дата <button type=button class="btn btn-default" id=dp4 data-date-format=yyyy-mm-dd data-date=2016-01-01>Вибрати</button></th>
@@ -93,7 +100,19 @@
   <li><a data-toggle="tab" href="#analiz66">Споживання / площа, користувачі</a></li>
 </ul>
 <!--selector_end-->
-
+<style type="text/css">
+   TABLE {
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   TD, TH {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   TH {
+    background: #b0e0e6; /* Цвет фона */
+   }
+  </style>
 <!--content-->
 <div class="tab-content">
 
@@ -103,10 +122,10 @@
 <!--таблиця 61_start-->
 <div class=well>
 <div class=row>
-<button type=button class="btn btn-primary pull-right" onclick="get_req_table1()">Аналізувати</button>
-</div>
+<button type=button class="btn btn-primary pull-right" onclick="table()">Аналізувати</button>
+</div  onLoad="table()">
 <h3>Графік витрат</h3>
-<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+<div id="table" style="width:1000px; height:500px"></div>
 </div>
 <!--таблиця 61_end-->
 	</div>
@@ -121,7 +140,7 @@
 <button type=button class="btn btn-primary pull-right" onclick="get_req_table2()">Аналізувати</button>
 </div>
 <h3>Графік витрат</h3>
-<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+<div id="table" style="width:1000px; height:500px"></div>
 </div>
 <!--таблиця 62_end-->
 	</div>
@@ -141,7 +160,7 @@
 <!--таблиця 63_end-->
 	</div>
 <!--span-panel_63_end-->
-
+<div id="table"></div>
 <!--span-panel_64_start-->
 	<div id="analiz2" class="tab-pane fade in active">		
 		<h1><b>Таблиця споживання групи</b></h1>

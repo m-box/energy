@@ -1,14 +1,9 @@
-<!--скрипт чартов-->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script src="/js/charts.js"></script>
+<link href=/css/datepicker.css rel=stylesheet>
+<!--скрипт таблиці-->
 <script src="/js/table2.js"></script>
-<script src="/js/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/log_user.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/fractal.css">
-<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+<!--скрипт календара-->
+<script src=/js/bootstrap-datepicker.js></script>
+<script src=/js/dt.js></script>
 
 <div class="container">
 <div class="row">
@@ -18,27 +13,8 @@
 </div>
 </div>
 </div>
-
 <div class="container energy">
-
 <h2><span class="label label-info">Муніципальне майно. Зведено-порівняльна таблиця.</span></h2>
-<link href=/css/datepicker.css rel=stylesheet>
-<script src=/js/bootstrap-datepicker.js></script>
-<script src=/js/dt.js></script>
-
-  <style type="text/css">
-   TABLE {
-    width: 300px; /* Ширина таблицы */
-    border-collapse: collapse; /* Убираем двойные линии между ячейками */
-   }
-   TD, TH {
-    padding: 3px; /* Поля вокруг содержимого таблицы */
-    border: 1px solid black; /* Параметры рамки */
-   }
-   TH {
-    background: #b0e0e6; /* Цвет фона */
-   }
-  </style>
 <!--
 1. порівняння споживання енергії одним закладом з іншим закладом (за період)
 2. порівняти один заклад за певний період з самим собою але за інший період
@@ -106,7 +82,7 @@
 <div class=row>
 <button type=button class="btn btn-primary pull-right" onclick="table()">Аналізувати</button>
 <h3>Зведена таблиця витрат</h3>
-<div class="energy" onLoad="table()" id="table" style="width:1000px; height:500px"></div>
+<table class="energy" id="table" style="width:1000px; height:500px"></table>
 </div>
 
 </div>

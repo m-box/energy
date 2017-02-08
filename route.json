@@ -1,0 +1,32 @@
+{
+"0":{"arg_str":"tpl/ugoda.html",		"route_url":"ugoda_meriv_shid",	"route_type":"template_page"},
+"1":{"arg_str":"controllers/default.php",			"route_url":"energoanaliz",		"route_type":"template_page"},
+"2":{"arg_str":"tpl/faq.html",			"route_url":"faq",		"route_type":"template_page"},
+"3":{"arg_str":"tpl/ugoda.html",		"route_url":"support",	"route_type":"template_page"},
+"4":{"arg_str":"tpl/registration.html", "route_url":"registration", "route_type":"template_page"},
+"5":{"arg_str":"controllers/checkadm.php", "route_url":"check_adm", "route_type":"template_page"},
+"6":{"arg_str":"controllers/types.php", "route_url":"types", "route_type":"template_page"},
+<<<<<<< HEAD
+"7":{"arg_str":"controllers/energo5.php", "route_url":"analizs5", "route_type":"template_page"},
+=======
+"7":{"arg_str":"controllers/energotable.php", "route_url":"energotable", "route_type":"template_page"},
+>>>>>>> d882c064241b76f0b8b62a1594dc33baa5cae341
+"8":{"arg_str":"data", "route_url":"api/data", "route_type":"rest_api"},
+"9":{"arg_str":"user", "route_url":"api/user", "route_type":"rest_api"},
+"10":{"arg_str":"more", "route_url":"api/more", "route_type":"rest_api"},
+"11":{"arg_str":"object", "route_url":"api/object", "route_type":"rest_api"},
+"12":{"arg_str":"privilege", "route_url":"api/privilege", "route_type":"rest_api"},
+"13":{"arg_str":"tarif", "route_url":"api/tarif", "route_type":"rest_api"},
+"14":{"arg_str":"usertype", "route_url":"api/usertype", "route_type":"rest_api"},
+"15":{"arg_str":"objecttype", "route_url":"api/objecttype", "route_type":"rest_api"},
+"16":{"arg_str":"controllers/checkadm.php", "route_url":"check_adm/:num", "route_type":"template_page"},
+"17":{"arg_str":"to_api/myAPI/controller.php", "route_url":"myapi/:str", "route_type":"template_page"},
+"18":{"arg_str":"controllers/typeanaliz.php", "route_url":"typeanaliz/:num", "route_type":"template_page"},
+"19":{"arg_str":"controllers/objanaliz.php", "route_url":"objanaliz/:num", "route_type":"template_page"},
+"20":{"arg_str":"controllers/object.php", "route_url":"object/:num", "route_type":"template_page"},
+"21":{"arg_str":"controllers/root/table.php", "route_url":"tablemark/:str", "route_type":"template_page"},
+"22":{"arg_str":"controllers/objecttype.php", "route_url":"objecttype/:num", "route_type":"template_page"},
+"23":{"arg_str":"controllers/admin/check_obj.php", "route_url":"object/edit/:num", "route_type":"template_page"}
+
+
+}

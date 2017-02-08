@@ -778,7 +778,7 @@ console.log (data);
 					  ]	}
 	var requery=JSON.stringify(data);
 	var sub_req = $.ajax({
-		url: '/api/sobes',
+		url: '/api/chart5',
 		type: 'post',
 		data:'data='+ requery,
 		success: function(res) {

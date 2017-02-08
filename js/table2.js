@@ -50,28 +50,28 @@ function table() {
 		var endDate=$('#date option:selected').text();
 		switch (endDate) {
 			case "2010":			
-			endDate = "2011-01-01" ;
+			endDate = "2010-12-31" ;
 			break
 			case "2011":
-			endDate = "2012-01-01";
+			endDate = "2011-12-31";
 			break
 			case "2012":
-			endDate = "2013-01-01";		
+			endDate = "2012-12-31";		
 			break
 			case "2013":
-			endDate = "2014-01-01";
+			endDate = "2013-12-31";
 			break
 			case "2014":
-			endDate = "2015-01-01";
+			endDate = "2014-12-31";
 			break
 			case "2015":
-			endDate = "2016-01-01";
+			endDate = "2015-12-31";
 			break
 			case "2016":
-			endDate = "2017-01-01";
+			endDate = "2016-12-31";
 			break
 			case "2017":
-			endDate = "2018-01-01";
+			endDate = "2017-12-31";
 			break;
 		}
 		var data_name = {
@@ -101,7 +101,7 @@ function table() {
 					data: [
 								["date",">=",startDate],
 								["date","<=", endDate],
-						  ]	}
+							]}
 		var requery=JSON.stringify(data)
 		console.log(i)
 		//из chart1 забираем значения
@@ -117,24 +117,21 @@ function table() {
 			console.log(i)
 
 			if(arr_1 === null){
-				console.log("zz")
+				$('#table').append('<tr><td>'+arr[ch][0]+'</td><td>Помилка даних</td><td></td><td></td><td></td>	<td>  </td><td></td><td></td><td>  </td><td>  </td><td></td><td></td><td></td><td></td></tr> ')
 			}
 			else{
-			
 
 			if(value=='teplo')
 				{			
-		var sum = parseInt(arr_1[0][1] + arr_1[1][1] + arr_1[2][1] + arr_1[3][1] + arr_1[4][1] + arr_1[5][1] + arr_1[6][1])
+		var sum = arr_1[0][1] + arr_1[1][1] + arr_1[2][1] + arr_1[3][1] + arr_1[4][1] + arr_1[5][1] + arr_1[6][1]
 		$('#table').append('<tr><td>'+arr[ch][0]+'</td><td>'+arr_1[0][1]+'</td><td>'+arr_1[1][1]+'</td><td>'+arr_1[2][1]+'</td><td>'+arr_1[3][1]+'</td>	<td>  0 </td><td>0</td><td>0</td><td> 0 </td><td> 0 </td><td>'+arr_1[4][1]+'</td><td>'+arr_1[5][1]+'</td><td>'+arr_1[6][1]+'</td><td>'+sum.toFixed(2)+'</td></tr> ')
 		}
 		else{
+
 		var sum = parseInt(arr_1[0][1] + arr_1[1][1] + arr_1[2][1] + arr_1[3][1] + arr_1[4][1] + arr_1[5][1] + arr_1[6][1]+ arr_1[7][1]+ arr_1[8][1]+ arr_1[9][1]+ arr_1[10][1]+ arr_1[11][1])
 		$('#table').append('<tr><td>'+arr[ch][0]+'</td><td>'+arr_1[0][1]+'</td><td>'+arr_1[1][1]+'</td><td>'+arr_1[2][1]+'</td><td>'+arr_1[3][1]+'</td>	<td>'+arr_1[4][1]+'</td><td>'+arr_1[5][1]+'</td><td>'+arr_1[6][1]+'</td><td>'+arr_1[7][1]+'</td><td>'+arr_1[8][1]+'</td><td>'+arr_1[9][1]+'</td><td>'+arr_1[10][1]+'</td><td>'+arr_1[11][1]+'</td><td>'+sum.toFixed(2)+'</td></tr> ')
 		}
 	}
-
-
-
 		}
 	})
 			}

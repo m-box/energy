@@ -1,32 +1,106 @@
-<!--скрипт чартов-->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script src="/js/charts.js"></script>
+<link href=/css/datepicker.css rel=stylesheet>
+<!--скрипт таблиці-->
+<script src="/js/table2.js"></script>
+<!--скрипт календара-->
+<script src=/js/bootstrap-datepicker.js></script>
+<script src=/js/dt.js></script>
 
-<div class=container>
-<div class=row>
-<div class=col-md-12>
+<div class="container">
+<div class="row">
+<div class="col-md-12">
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51921.635319801855!2d35.39077858664295!3d46.847729014720315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1470126747224" width=100% height=250 frameborder=0 style=border:0 allowfullscreen></iframe>
 <br>
 </div>
 </div>
-<h5><b>ID категорії: </b><span class="label label-danger" id="id_object">{!id!}</span></h5>
-<h2>Назва категорія: <span class="label label-success">{!name!}</span></h2>
 </div>
-
-<div class="container">
-
+<div class="container energy">
 <h2><span class="label label-info">Муніципальне майно. Зведено-порівняльна таблиця.</span></h2>
-<link href=/css/datepicker.css rel=stylesheet>
-<script src=/js/bootstrap-datepicker.js></script>
-<script src=/js/dt.js></script>
+<!--
+1. порівняння споживання енергії одним закладом з іншим закладом (за період)
+2. порівняти один заклад за певний період з самим собою але за інший період
+3. можливість порівняння групи закладів
+4. порівнянно одного закладу по відношенню до групи
+5. порівняння одного закладу чи групи з середньоміським споживанням
+6. споживання енергії на один квадратий метр чи на одного учня
+-->
+<!--selector-->
+<ul class="nav nav-tabs">
+  <li class="active" ><a data-toggle="tab" href="#analiz61">Заклади</a></li>  
+  <li><a data-toggle="tab" href="#analiz62">Періоди</a></li>
+  <li><a data-toggle="tab" href="#analiz63">Групи</a></li>
+  <li><a data-toggle="tab" href="#analiz64">Споживання груп</a></li>
+  <li><a data-toggle="tab" href="#analiz65">Середнє споживання</a></li>
+  <li><a data-toggle="tab" href="#analiz66">Відносне споживання</a></li>
+</ul>
+<!--selector_end-->
 
-<h3>Оберіть проміжок часу</h3>
+<!--content-->
+<div class="tab-content">
+
+<!--span-panel_61_start-->
+	<div id="analiz61" class="tab-pane fade in active">		
+		<h1><b>Таблиця по закладам</b></h1>
+<!--таблиця 61_start-->
 <div class=well>
-<div class="alert alert-error" id=alert>
-<strong>Оберіть початкову та кінцеву дати</strong>
+<div class=well>
+<div class="row">
+<!--Селектор року_start-->
+<div class=col-md-6>  
+<h3>Оберіть рік</h3>
+  <select id="date">
+    <option value="2010">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+  </select>
 </div>
-<table class=table>
+<!--Селектор року_end-->
+<!--Селектор ресурсу_start-->
+<div class=col-md-6>
+<h3>Оберіть ресурс</h3>
+<div class=radio>
+<label><input type=radio name=optradio1 value="electro">Електрична енергія</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1 value="gas">Природний газ</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1 value="water">Водопостачання</label>
+</div>
+<div class=radio>
+<label><input type=radio name=optradio1 value="teplo">Витрати тепла</label>
+</div>
+</div>
+<!--Селектор ресурсу_start-->
+</div>
+</div>
+
+<div class=row>
+<button type=button class="btn btn-primary pull-right" onclick="table()">Аналізувати</button>
+<h3>Зведена таблиця витрат</h3>
+<table id="table" class="table table-striped table-hover table-bordered">  <tr> <td> Найменування </td>    <td> Січень </td>  <td>Лютий</td> <td>Березень</td> <td>Квітень</td><td>Травень</td><td>Червень</td> <td>Липень</td> <td>Серпень </td>  <td>Вересень</td> <td>Жовтень</td> <td>Листопад</td><td>Грудень</td><td>Всього за рік</td></tr></table>
+</div>
+
+</div>
+<!--таблиця 61_end-->
+	</div>
+<!--span-panel_61_end-->
+
+<!--span-panel_62_start-->
+	<div id="analiz62" class="tab-pane fade in">		
+		<h1><b>Таблиця по періодам</b></h1>
+<!--таблиця 62_start-->
+<div class=well>
+<!--Дата та ресурс_start-->
+<div class=well>
+<div class=row>
+<div class=col-md-6>
+<h3>Оберіть початкову та кінцеву дати</h3>
+<table>
 <thead>
 <tr>
 <th>Початкова дата <button type=button class="btn btn-default" id=dp4 data-date-format=yyyy-mm-dd data-date=2016-01-01>Вибрати</button></th>
@@ -40,95 +114,53 @@
 </tr>
 </tbody>
 </table>
+</div>
+
 <h3>Оберіть ресурс</h3>
-
-<div class=row>
 <div class=col-md-3>
 <div class=radio>
-<label><input type=radio name=optradio1 value="electro">Кількість кВт</label>
+<label><input type=radio name=optradio2 value="electro">Кількість кВт</label>
 </div>
 <div class=radio>
-<label><input type=radio name=optradio1 value="gas">Кількість газу</label>
+<label><input type=radio name=optradio2 value="gas">Кількість газу</label>
 </div>
 <div class=radio>
-<label><input type=radio name=optradio1 value="water">Кількість води</label>
+<label><input type=radio name=optradio2 value="water">Кількість води</label>
 </div>
 <div class=radio>
-<label><input type=radio name=optradio1 value="teplo">Кількість тепла</label>
+<label><input type=radio name=optradio2 value="teplo">Кількість тепла</label>
 </div>
 </div>
 <div class=col-md-3>
 <div class=radio>
-<label><input type=radio name=optradio1>Вартість кВт</label>
+<label><input type=radio name=optradio2>Вартість кВт</label>
 </div>
 <div class=radio>
-<label><input type=radio name=optradio1>Вартість газу</label>
+<label><input type=radio name=optradio2>Вартість газу</label>
 </div>
 <div class=radio>
-<label><input type=radio name=optradio1>Вартість води</label>
+<label><input type=radio name=optradio2>Вартість води</label>
 </div>
 <div class=radio>
-<label><input type=radio name=optradio1>Вартість тепла</label>
+<label><input type=radio name=optradio2>Вартість тепла</label>
 </div>
 </div>
 </div>
 
 </div>
-
-<!--
-1. порівняння споживання енергії одним закладом з іншим закладом (за період)
-2. порівняти один заклад за певний період з самим собою але за інший період
-3. можливість порівняння групи закладів
-4. порівнянно одного закладу по відношенню до групи
-5. порівняння одного закладу чи групи з середньоміським споживанням
-6. споживання енергії на один квадратий метр чи на одного учня
--->
-<!--selector-->
-<ul class="nav nav-tabs">
-  <li class="active" ><a data-toggle="tab" href="#analiz61">Порівняти заклади</a></li>  
-  <li><a data-toggle="tab" href="#analiz62">Порівняти періоди</a></li>
-  <li><a data-toggle="tab" href="#analiz63">Порівняти групи</a></li>
-  <li><a data-toggle="tab" href="#analiz64">Споживання відносно групи</a></li>
-  <li><a data-toggle="tab" href="#analiz65">Споживання відносно середннього</a></li>
-  <li><a data-toggle="tab" href="#analiz66">Споживання / площа, користувачі</a></li>
-</ul>
-<!--selector_end-->
-
-<!--content-->
-<div class="tab-content">
-
-<!--span-panel_61_start-->
-	<div id="analiz2" class="tab-pane fade in active">		
-		<h1><b>Таблиця по закладам</b></h1>
-<!--таблиця 61_start-->
-<div class=well>
-<div class=row>
-<button type=button class="btn btn-primary pull-right" onclick="get_req_table1()">Аналізувати</button>
-</div>
-<h3>Графік витрат</h3>
-<div id=columnchart_material2 style="width:1000px; height:500px"></div>
-</div>
-<!--таблиця 61_end-->
-	</div>
-<!--span-panel_61_end-->
-
-<!--span-panel_62_start-->
-	<div id="analiz2" class="tab-pane fade in active">		
-		<h1><b>Таблиця по періодам</b></h1>
-<!--таблиця 62_start-->
-<div class=well>
+<!--Дата та ресурс_end-->
 <div class=row>
 <button type=button class="btn btn-primary pull-right" onclick="get_req_table2()">Аналізувати</button>
 </div>
 <h3>Графік витрат</h3>
-<div id=columnchart_material2 style="width:1000px; height:500px"></div>
+<div id="table" style="width:1000px; height:500px"></div>
 </div>
 <!--таблиця 62_end-->
 	</div>
 <!--span-panel_62_end-->
 
 <!--span-panel_63_start-->
-	<div id="analiz2" class="tab-pane fade in active">		
+	<div id="analiz63" class="tab-pane fade in">		
 		<h1><b>Таблиця групи закладів</b></h1>
 <!--таблиця 63_start-->
 <div class=well>
@@ -143,7 +175,7 @@
 <!--span-panel_63_end-->
 
 <!--span-panel_64_start-->
-	<div id="analiz2" class="tab-pane fade in active">		
+	<div id="analiz64" class="tab-pane fade in">		
 		<h1><b>Таблиця споживання групи</b></h1>
 <!--таблиця 64_start-->
 <div class=well>
@@ -158,7 +190,7 @@
 <!--span-panel_64_end-->
 
 <!--span-panel_65_start-->
-	<div id="analiz2" class="tab-pane fade in active">		
+	<div id="analiz65" class="tab-pane fade in">		
 		<h1><b>Таблиця споживання між закладами</b></h1>
 <!--таблиця 65_start-->
 <div class=well>
@@ -173,7 +205,7 @@
 <!--span-panel_65_end-->
 
 <!--span-panel_66_start-->
-	<div id="analiz2" class="tab-pane fade in active">		
+	<div id="analiz66" class="tab-pane fade in">		
 		<h1><b>Таблиця споживання на площу та кількість користувачів</b></h1>
 <!--таблиця 66_start-->
 <div class=well>

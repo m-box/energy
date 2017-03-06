@@ -160,11 +160,11 @@ function send_req_more(){
  		var area_zdan = $("#area_zdan").val();
  		var opal_volume = $("#opal_volume").val();
  		var area_windw = $("#area_windw").val();
-		var heat_type = $("#heat_type option:selected").val();
+		var teplo_type = $("#teplo_type option:selected").val();
  		var type_fuel = $("#type_fuel option:selected").val();
  		var material_wall = $("#material_wall option:selected").val();
  		var typ_pokrivli = $("#typ_pokrivli option:selected").val();
- 		var	 heat_lich = $("#heat_lich option:selected").val();
+ 		var	 teplo_lich = $("#teplo_lich option:selected").val();
  		var e_lich = $("#e_lich option:selected").val();
 		var water_lich = $("#water_lich option:selected").val();
 		var req_more = {};
@@ -174,10 +174,10 @@ function send_req_more(){
 		data.zagalni_obyem=area_zdan;
 		data.opaluvalniy_obyem=opal_volume;
 		data.plosha_vikon=area_windw;
-		data.type_opalen=heat_type;
+		data.type_opalen=teplo_type;
 		data.type_walls=material_wall;
 		data.type_roof=typ_pokrivli;
-		data.type_opalen=heat_lich;
+		data.type_opalen=teplo_lich;
 		data.lich_electro=e_lich;
 		data.lich_water=water_lich;
 		req_more.method="put";
@@ -336,7 +336,7 @@ function send_req_taryf_electro(){
 	data.param = energo_taryf_name;
 	data.price = energo_taryf_;
 	data.date=energo_taryf_date;
-	e_taryf.method="put";
+	e_taryf.method="post";
 	e_taryf.data=data;
 	var requery=JSON.stringify(e_taryf);
 	var send_req_taryf_electro_ = $.ajax({
@@ -357,11 +357,11 @@ function send_req_taryf_gas(){
 	data.param = param;
 	data.price = gas_taryf
 	data.date = gas_taryf_date;
-	g_taryf.method="put";
+	g_taryf.method="post";
 	g_taryf.data=data;
 	var requery=JSON.stringify(g_taryf);
 	var send_req_taryf_gas_ = $.ajax({
-		url: '/api/data',
+		url: '/api/tarif',
 			type: 'post',
 	data:'data='+ requery,
 	success: function(data) {
@@ -370,22 +370,22 @@ function send_req_taryf_gas(){
 	})	
 };
 	//тепло
-function send_req_taryf_heat(){
+function send_req_taryf_teplo(){
 	//var id_object = $("#id_object").val();
-	var heat_taryf_ = $("#taryf_teplo").val();
-	var heat_taryf_date = $("#taryf_teplo_date").val();
+	var teplo_taryf_ = $("#taryf_teplo").val();
+	var teplo_taryf_date = $("#taryf_teplo_date").val();
 	var param = "Teplo"
 	var h_taryf = {};
 	var data = {};
 	//data.id_object = id_obj
 	data.param = param
-	data.price=heat_taryf_;
-	data.date=heat_taryf_date;
-	h_taryf.method="put";
+	data.price=teplo_taryf_;
+	data.date=teplo_taryf_date;
+	h_taryf.method="post";
 	h_taryf.data=data;
 	var requery=JSON.stringify(h_taryf);
-	var send_req_taryf_heat_ = $.ajax({
-		url: '/api/data',
+	var send_req_taryf_teplo_ = $.ajax({
+		url: '/api/tarif',
 		type: 'post',
 		data: 'data='+ requery,
 	success: function(data) {
@@ -394,24 +394,24 @@ function send_req_taryf_heat(){
 	})	
 };
 	//вода
-  function send_req_taryf_voda(){
+  function send_req_taryf_water(){
 	//var id_object = $("#id_object").val();
 	var water_taryf_put = $("#taryf_vodput").val();
 	var water_taryf_vidh = $("#taryf_vidv").val();
-	var water_taryf_date = $("#taryf_voda_date").val();
-	var name_voda = "water";
+	var water_taryf_date = $("#taryf_water_date").val();
+	var name_water = "water";
 	var w_taryf = {};
 	var data = {};
 	//data.id_object = id_obj
-	data.param = name_voda
+	data.param = name_water
 	data.price=water_taryf_put;
 	//data.param=water_taryf_vidh;
 	data.date=water_taryf_date;
-	w_taryf.method="put";
+	w_taryf.method="post";
 	w_taryf.data=data;
 	var requery=JSON.stringify(w_taryf);
 	var send_req_taryf_water_ = $.ajax({
-		url: '/api/data',
+		url: '/api/tarif',
 		type: 'post',
 	data:'data='+ requery,
 	success: function(data) {

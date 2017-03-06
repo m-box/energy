@@ -14,13 +14,13 @@ switch (value) {
     value='water';
     break;
     case "Кількість тепла":
-    value='heat';
+    value='teplo';
     break
 }
 /*if (value=="Кількість кВт"){value='electro'}
 else if (value=="Кількість газу"){value="gas"}
 else if (value=="Кількість води"){value="water"}
-else if (value=="Кількість тепла"){value="heat"};*/
+else if (value=="Кількість тепла"){value="teplo"};*/
 var out = [];
 var ch=0;
 var outs=[
